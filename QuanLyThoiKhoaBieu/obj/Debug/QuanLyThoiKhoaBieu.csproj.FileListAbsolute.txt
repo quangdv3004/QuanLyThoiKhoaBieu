@@ -1,0 +1,16 @@
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\bin\Debug\QuanLyThoiKhoaBieu.exe.config
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\bin\Debug\QuanLyThoiKhoaBieu.exe
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\bin\Debug\QuanLyThoiKhoaBieu.pdb
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.csproj.AssemblyReference.cache
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.Form1.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.Properties.Resources.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.csproj.GenerateResource.cache
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.csproj.CoreCompileInputs.cache
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.exe
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.pdb
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\bin\Debug\EntityFramework.dll
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\bin\Debug\EntityFramework.SqlServer.dll
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\bin\Debug\EntityFramework.xml
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\bin\Debug\EntityFramework.SqlServer.xml
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.ThoiKhoaBieu.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.csproj.CopyComplete

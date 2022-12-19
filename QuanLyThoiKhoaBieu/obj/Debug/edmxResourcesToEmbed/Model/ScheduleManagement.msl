@@ -1,0 +1,415 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ScheduleManagementStoreContainer" CdmEntityContainer="ScheduleManagementEntities">
+    <EntitySetMapping Name="ChiTietCTDTs">
+      <EntityTypeMapping TypeName="ScheduleManagement.ChiTietCTDT">
+        <MappingFragment StoreEntitySet="ChiTietCTDT">
+          <ScalarProperty Name="maChiTiet" ColumnName="maChiTiet" />
+          <ScalarProperty Name="maHP" ColumnName="maHP" />
+          <ScalarProperty Name="maCTDT" ColumnName="maCTDT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CTDTs">
+      <EntityTypeMapping TypeName="ScheduleManagement.CTDT">
+        <MappingFragment StoreEntitySet="CTDT">
+          <ScalarProperty Name="maCTDT" ColumnName="maCTDT" />
+          <ScalarProperty Name="tenCTDT" ColumnName="tenCTDT" />
+          <ScalarProperty Name="tgianDT" ColumnName="tgianDT" />
+          <ScalarProperty Name="ngayKy" ColumnName="ngayKy" />
+          <ScalarProperty Name="maNganh" ColumnName="maNganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DangKies">
+      <EntityTypeMapping TypeName="ScheduleManagement.DangKy">
+        <MappingFragment StoreEntitySet="DangKy">
+          <ScalarProperty Name="maDangKy" ColumnName="maDangKy" />
+          <ScalarProperty Name="maPCGD" ColumnName="maPCGD" />
+          <ScalarProperty Name="maHP" ColumnName="maHP" />
+          <ScalarProperty Name="maGV" ColumnName="maGV" />
+          <ScalarProperty Name="maHK" ColumnName="maHK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GiangViens">
+      <EntityTypeMapping TypeName="ScheduleManagement.GiangVien">
+        <MappingFragment StoreEntitySet="GiangVien">
+          <ScalarProperty Name="maGV" ColumnName="maGV" />
+          <ScalarProperty Name="tenGV" ColumnName="tenGV" />
+          <ScalarProperty Name="ngaySinh" ColumnName="ngaySinh" />
+          <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dienThoai" ColumnName="dienThoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HocKy_NienKhoa">
+      <EntityTypeMapping TypeName="ScheduleManagement.HocKy_NienKhoa">
+        <MappingFragment StoreEntitySet="HocKy_NienKhoa">
+          <ScalarProperty Name="maHK" ColumnName="maHK" />
+          <ScalarProperty Name="hocKy" ColumnName="hocKy" />
+          <ScalarProperty Name="nienKhoa" ColumnName="nienKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HocPhans">
+      <EntityTypeMapping TypeName="ScheduleManagement.HocPhan">
+        <MappingFragment StoreEntitySet="HocPhan">
+          <ScalarProperty Name="maHP" ColumnName="maHP" />
+          <ScalarProperty Name="tenHP" ColumnName="tenHP" />
+          <ScalarProperty Name="soTinChi" ColumnName="soTinChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khoas">
+      <EntityTypeMapping TypeName="ScheduleManagement.Khoa">
+        <MappingFragment StoreEntitySet="Khoa">
+          <ScalarProperty Name="maKhoa" ColumnName="maKhoa" />
+          <ScalarProperty Name="tenKhoa" ColumnName="tenKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lop_QL">
+      <EntityTypeMapping TypeName="ScheduleManagement.Lop_QL">
+        <MappingFragment StoreEntitySet="Lop_QL">
+          <ScalarProperty Name="maLop" ColumnName="maLop" />
+          <ScalarProperty Name="tenLop" ColumnName="tenLop" />
+          <ScalarProperty Name="maNganh" ColumnName="maNganh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Nganhs">
+      <EntityTypeMapping TypeName="ScheduleManagement.Nganh">
+        <MappingFragment StoreEntitySet="Nganh">
+          <ScalarProperty Name="maNganh" ColumnName="maNganh" />
+          <ScalarProperty Name="tenNganh" ColumnName="tenNganh" />
+          <ScalarProperty Name="maKhoa" ColumnName="maKhoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhanCongGiangDays">
+      <EntityTypeMapping TypeName="ScheduleManagement.PhanCongGiangDay">
+        <MappingFragment StoreEntitySet="PhanCongGiangDay">
+          <ScalarProperty Name="maPCGD" ColumnName="maPCGD" />
+          <ScalarProperty Name="maHP" ColumnName="maHP" />
+          <ScalarProperty Name="maGV" ColumnName="maGV" />
+          <ScalarProperty Name="maHK" ColumnName="maHK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phongs">
+      <EntityTypeMapping TypeName="ScheduleManagement.Phong">
+        <MappingFragment StoreEntitySet="Phong">
+          <ScalarProperty Name="maPhong" ColumnName="maPhong" />
+          <ScalarProperty Name="tenPhong" ColumnName="tenPhong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SinhViens">
+      <EntityTypeMapping TypeName="ScheduleManagement.SinhVien">
+        <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="maSV" ColumnName="maSV" />
+          <ScalarProperty Name="tenSV" ColumnName="tenSV" />
+          <ScalarProperty Name="maLop" ColumnName="maLop" />
+          <ScalarProperty Name="ngaySinh" ColumnName="ngaySinh" />
+          <ScalarProperty Name="gioiTinh" ColumnName="gioiTinh" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="dienThoai" ColumnName="dienThoai" />
+          <ScalarProperty Name="maDangKy" ColumnName="maDangKy" />
+          <ScalarProperty Name="maHP" ColumnName="maHP" />
+          <ScalarProperty Name="maHK" ColumnName="maHK" />
+          <ScalarProperty Name="tenDangNhap" ColumnName="tenDangNhap" />
+          <ScalarProperty Name="matKhau" ColumnName="matKhau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThoiKhoaBieux">
+      <EntityTypeMapping TypeName="ScheduleManagement.ThoiKhoaBieu">
+        <MappingFragment StoreEntitySet="ThoiKhoaBieu">
+          <ScalarProperty Name="maLop" ColumnName="maLop" />
+          <ScalarProperty Name="maTKB" ColumnName="maTKB" />
+          <ScalarProperty Name="thu" ColumnName="thu" />
+          <ScalarProperty Name="tiet" ColumnName="tiet" />
+          <ScalarProperty Name="maPhong" ColumnName="maPhong" />
+          <ScalarProperty Name="maHP" ColumnName="maHP" />
+          <ScalarProperty Name="maGV" ColumnName="maGV" />
+          <ScalarProperty Name="maHK" ColumnName="maHK" />
+          <ScalarProperty Name="maPCGD" ColumnName="maPCGD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachChiTietCTDT" FunctionName="ScheduleManagement.Store.sp_danhSachChiTietCTDT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachChiTietCTDT_Result">
+          <ScalarProperty Name="Mã_chi_tiết_CTĐT" ColumnName="Mã chi tiết CTĐT" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Số_tín_chỉ" ColumnName="Số tín chỉ" />
+          <ScalarProperty Name="Tên_ngành" ColumnName="Tên ngành" />
+          <ScalarProperty Name="Tên_CTĐT" ColumnName="Tên CTĐT" />
+          <ScalarProperty Name="Ngày_ký" ColumnName="Ngày ký" />
+          <ScalarProperty Name="Thời_gian_đào_tạo" ColumnName="Thời gian đào tạo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachCTDT" FunctionName="ScheduleManagement.Store.sp_danhSachCTDT">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachCTDT_Result">
+          <ScalarProperty Name="Mã_CTDT" ColumnName="Mã CTDT" />
+          <ScalarProperty Name="tenCTDT" ColumnName="tenCTDT" />
+          <ScalarProperty Name="Thời_gian_đào_tạo" ColumnName="Thời gian đào tạo" />
+          <ScalarProperty Name="Ngày_ký" ColumnName="Ngày ký" />
+          <ScalarProperty Name="Tên_ngành" ColumnName="Tên ngành" />
+          <ScalarProperty Name="Khoa" ColumnName="Khoa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachDangKy" FunctionName="ScheduleManagement.Store.sp_danhSachDangKy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachDangKy_Result">
+          <ScalarProperty Name="Mã_đăng_ký" ColumnName="Mã đăng ký" />
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Mã_phân_công_giảng_dạy" ColumnName="Mã phân công giảng dạy" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Số_tín_chỉ" ColumnName="Số tín chỉ" />
+          <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachGiangVien" FunctionName="ScheduleManagement.Store.sp_danhSachGiangVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachGiangVien_Result">
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Tên_giảng_viên1" ColumnName="Tên giảng viên1" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachHocKy" FunctionName="ScheduleManagement.Store.sp_danhSachHocKy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachHocKy_Result">
+          <ScalarProperty Name="Mã_học_kỳ" ColumnName="Mã học kỳ" />
+          <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+          <ScalarProperty Name="Niên_khóa" ColumnName="Niên khóa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachHocPhan" FunctionName="ScheduleManagement.Store.sp_danhSachHocPhan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachHocPhan_Result">
+          <ScalarProperty Name="Mã_học_phần" ColumnName="Mã học phần" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Số_tín_chỉ" ColumnName="Số tín chỉ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachLopQuanLy" FunctionName="ScheduleManagement.Store.sp_danhSachLopQuanLy">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachLopQuanLy_Result">
+          <ScalarProperty Name="Mã_lớp" ColumnName="Mã lớp" />
+          <ScalarProperty Name="Tên_lớp" ColumnName="Tên lớp" />
+          <ScalarProperty Name="Tên_ngành" ColumnName="Tên ngành" />
+          <ScalarProperty Name="Tên_khoa" ColumnName="Tên khoa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachNganh" FunctionName="ScheduleManagement.Store.sp_danhSachNganh">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachNganh_Result">
+          <ScalarProperty Name="Mã_ngành" ColumnName="Mã ngành" />
+          <ScalarProperty Name="Tên_ngành" ColumnName="Tên ngành" />
+          <ScalarProperty Name="Tên_khoa" ColumnName="Tên khoa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachPCGD" FunctionName="ScheduleManagement.Store.sp_danhSachPCGD">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachPCGD_Result">
+          <ScalarProperty Name="Mã_PCGD" ColumnName="Mã PCGD" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachPhong" FunctionName="ScheduleManagement.Store.sp_danhSachPhong">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachPhong_Result">
+          <ScalarProperty Name="Mã_phòng" ColumnName="Mã phòng" />
+          <ScalarProperty Name="Tên_phòng" ColumnName="Tên phòng" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachSinhVien" FunctionName="ScheduleManagement.Store.sp_danhSachSinhVien">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachSinhVien_Result">
+          <ScalarProperty Name="Mã_sinh_viên" ColumnName="Mã sinh viên" />
+          <ScalarProperty Name="Tên_sinh_viên" ColumnName="Tên sinh viên" />
+          <ScalarProperty Name="Tên_lớp" ColumnName="Tên lớp" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+          <ScalarProperty Name="Mã_đăng_ký" ColumnName="Mã đăng ký" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSanhKhoa" FunctionName="ScheduleManagement.Store.sp_danhSanhKhoa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSanhKhoa_Result">
+          <ScalarProperty Name="Mã_khoa" ColumnName="Mã khoa" />
+          <ScalarProperty Name="Tên_khoa" ColumnName="Tên khoa" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_suaChiTietCTDT" FunctionName="ScheduleManagement.Store.sp_suaChiTietCTDT" />
+    <FunctionImportMapping FunctionImportName="sp_suaCTDT" FunctionName="ScheduleManagement.Store.sp_suaCTDT" />
+    <FunctionImportMapping FunctionImportName="sp_suaDangKy" FunctionName="ScheduleManagement.Store.sp_suaDangKy" />
+    <FunctionImportMapping FunctionImportName="sp_suaGiangVien" FunctionName="ScheduleManagement.Store.sp_suaGiangVien" />
+    <FunctionImportMapping FunctionImportName="sp_suaHocKy" FunctionName="ScheduleManagement.Store.sp_suaHocKy" />
+    <FunctionImportMapping FunctionImportName="sp_suaHocPhan" FunctionName="ScheduleManagement.Store.sp_suaHocPhan" />
+    <FunctionImportMapping FunctionImportName="sp_suaKhoa" FunctionName="ScheduleManagement.Store.sp_suaKhoa" />
+    <FunctionImportMapping FunctionImportName="sp_suaLopQuanLy" FunctionName="ScheduleManagement.Store.sp_suaLopQuanLy" />
+    <FunctionImportMapping FunctionImportName="sp_suaNganh" FunctionName="ScheduleManagement.Store.sp_suaNganh" />
+    <FunctionImportMapping FunctionImportName="sp_suaPCGD" FunctionName="ScheduleManagement.Store.sp_suaPCGD" />
+    <FunctionImportMapping FunctionImportName="sp_suaPhong" FunctionName="ScheduleManagement.Store.sp_suaPhong" />
+    <FunctionImportMapping FunctionImportName="sp_themChiTietCTDT" FunctionName="ScheduleManagement.Store.sp_themChiTietCTDT" />
+    <FunctionImportMapping FunctionImportName="sp_themCTDT" FunctionName="ScheduleManagement.Store.sp_themCTDT" />
+    <FunctionImportMapping FunctionImportName="sp_themDangKy" FunctionName="ScheduleManagement.Store.sp_themDangKy" />
+    <FunctionImportMapping FunctionImportName="sp_themGiangVien" FunctionName="ScheduleManagement.Store.sp_themGiangVien" />
+    <FunctionImportMapping FunctionImportName="sp_themHocKy" FunctionName="ScheduleManagement.Store.sp_themHocKy" />
+    <FunctionImportMapping FunctionImportName="sp_themHocPhan" FunctionName="ScheduleManagement.Store.sp_themHocPhan" />
+    <FunctionImportMapping FunctionImportName="sp_themKhoa" FunctionName="ScheduleManagement.Store.sp_themKhoa" />
+    <FunctionImportMapping FunctionImportName="sp_themLopQuanLy" FunctionName="ScheduleManagement.Store.sp_themLopQuanLy" />
+    <FunctionImportMapping FunctionImportName="sp_themNganh" FunctionName="ScheduleManagement.Store.sp_themNganh" />
+    <FunctionImportMapping FunctionImportName="sp_themPCGD" FunctionName="ScheduleManagement.Store.sp_themPCGD" />
+    <FunctionImportMapping FunctionImportName="sp_themPhong" FunctionName="ScheduleManagement.Store.sp_themPhong" />
+    <FunctionImportMapping FunctionImportName="sp_xoaChiTietCTDT" FunctionName="ScheduleManagement.Store.sp_xoaChiTietCTDT" />
+    <FunctionImportMapping FunctionImportName="sp_xoaCTDT" FunctionName="ScheduleManagement.Store.sp_xoaCTDT" />
+    <FunctionImportMapping FunctionImportName="sp_xoaDangKy" FunctionName="ScheduleManagement.Store.sp_xoaDangKy" />
+    <FunctionImportMapping FunctionImportName="sp_xoaGiangVien" FunctionName="ScheduleManagement.Store.sp_xoaGiangVien" />
+    <FunctionImportMapping FunctionImportName="sp_xoaHocKy" FunctionName="ScheduleManagement.Store.sp_xoaHocKy" />
+    <FunctionImportMapping FunctionImportName="sp_xoaHocPhan" FunctionName="ScheduleManagement.Store.sp_xoaHocPhan" />
+    <FunctionImportMapping FunctionImportName="sp_xoaKhoa" FunctionName="ScheduleManagement.Store.sp_xoaKhoa" />
+    <FunctionImportMapping FunctionImportName="sp_xoaLopQuanLy" FunctionName="ScheduleManagement.Store.sp_xoaLopQuanLy" />
+    <FunctionImportMapping FunctionImportName="sp_xoaNganh" FunctionName="ScheduleManagement.Store.sp_xoaNganh" />
+    <FunctionImportMapping FunctionImportName="sp_xoaPCGD" FunctionName="ScheduleManagement.Store.sp_xoaPCGD" />
+    <FunctionImportMapping FunctionImportName="sp_xoaPhong" FunctionName="ScheduleManagement.Store.sp_xoaPhong" />
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="ScheduleManagement.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="ScheduleManagement.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="ScheduleManagement.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_danhSachTKB" FunctionName="ScheduleManagement.Store.sp_danhSachTKB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachTKB_Result">
+          <ScalarProperty Name="Mã_TKB" ColumnName="Mã TKB" />
+          <ScalarProperty Name="Thứ" ColumnName="Thứ" />
+          <ScalarProperty Name="Tiết" ColumnName="Tiết" />
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Phòng" ColumnName="Phòng" />
+          <ScalarProperty Name="Học_phần" ColumnName="Học phần" />
+          <ScalarProperty Name="Mã_phân_công_giảng_dạy" ColumnName="Mã phân công giảng dạy" />
+          <ScalarProperty Name="Học_kì" ColumnName="Học kì" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="ScheduleManagement.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="ScheduleManagement.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="ScheduleManagement.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="ScheduleManagement.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_suaThoiKHoaBieu" FunctionName="ScheduleManagement.Store.sp_suaThoiKHoaBieu" />
+    <FunctionImportMapping FunctionImportName="sp_themThoiKHoaBieu" FunctionName="ScheduleManagement.Store.sp_themThoiKHoaBieu" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="ScheduleManagement.Store.sp_upgraddiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_xoaThoiKhoaBieu" FunctionName="ScheduleManagement.Store.sp_xoaThoiKhoaBieu" />
+    <FunctionImportMapping FunctionImportName="sp_danhSachGiangVienFix" FunctionName="ScheduleManagement.Store.sp_danhSachGiangVienFix">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachGiangVienFix_Result">
+          <ScalarProperty Name="Mã_giảng_viên" ColumnName="Mã giảng viên" />
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachGiangVienFixSecond" FunctionName="ScheduleManagement.Store.sp_danhSachGiangVienFixSecond">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachGiangVienFixSecond_Result">
+          <ScalarProperty Name="Mã_giảng_viên" ColumnName="Mã giảng viên" />
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_themGiangVienTest" FunctionName="ScheduleManagement.Store.sp_themGiangVienTest" />
+    <FunctionImportMapping FunctionImportName="sp_getGiangVien4CB" FunctionName="ScheduleManagement.Store.sp_getGiangVien4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getGiangVien4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getHocKy4CB" FunctionName="ScheduleManagement.Store.sp_getHocKy4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getHocKy4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getHocPhan4CB" FunctionName="ScheduleManagement.Store.sp_getHocPhan4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getHocPhan4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getPCGD4CB" FunctionName="ScheduleManagement.Store.sp_getPCGD4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getPCGD4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>

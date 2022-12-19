@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B9B01A27-D35E-4D45-B7CA-04DF96BA4F9C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyThoiKhoaBieu</RootNamespace>
+    <AssemblyName>QuanLyThoiKhoaBieu</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ChiTietCTDT.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CTDT.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\DangKy.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\GiangVien.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HocKy_NienKhoa.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\HocPhan.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Khoa.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Lop_QL.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Nganh.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PhanCongGiangDay.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Phong.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScheduleManagement.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduleManagement.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScheduleManagement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ScheduleManagement.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ScheduleManagement.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SinhVien.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachChiTietCTDT_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachCTDT_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachDangKy_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachGiangVienFixSecond_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachGiangVienFix_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachGiangVien_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachHocKy_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachHocPhan_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachLopQuanLy_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachNganh_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachPCGD_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachPhong_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachSinhVien_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachTKB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSanhKhoa_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_getGiangVien4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_getHocKy4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_getHocPhan4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_getPCGD4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_helpdiagrams_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sysdiagram.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ThoiKhoaBieu.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ShowCombobox.cs" />
+    <Compile Include="Services\ShowGridView.cs" />
+    <Compile Include="ThoiKhoaBieu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ThoiKhoaBieu.Designer.cs">
+      <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ThoiKhoaBieu.resx">
+      <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Model\ScheduleManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ScheduleManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model\ScheduleManagement.edmx.diagram">
+      <DependentUpon>ScheduleManagement.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1000_F_359225336_EAT72YcLFLVtcSbWjKkjBrc5nfM1A5hF.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Interface-Login-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Interface-Login-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User-Interface-Login-icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Close-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purple-calendar-clock-icon-3d-reminder-notification-concept-website-ui-purple-background-3d-rendering-illustration.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model\ScheduleManagement.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScheduleManagement.edmx</DependentUpon>
+      <LastGenOutput>ScheduleManagement.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\ScheduleManagement.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ScheduleManagement.edmx</DependentUpon>
+      <LastGenOutput>ScheduleManagement.cs</LastGenOutput>
+    </Content>
+    <None Include="Resources\Start-Menu-Search-icon.png" />
+    <None Include="Resources\wall-calendar-clip-branding-mockup_460658-215.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
