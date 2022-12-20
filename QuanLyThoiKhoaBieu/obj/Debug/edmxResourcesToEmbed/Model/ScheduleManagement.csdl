@@ -750,6 +750,8 @@
     <FunctionImport Name="sp_getHocKy4CB" ReturnType="Collection(ScheduleManagement.sp_getHocKy4CB_Result)" />
     <FunctionImport Name="sp_getHocPhan4CB" ReturnType="Collection(ScheduleManagement.sp_getHocPhan4CB_Result)" />
     <FunctionImport Name="sp_getPCGD4CB" ReturnType="Collection(ScheduleManagement.sp_getPCGD4CB_Result)" />
+    <FunctionImport Name="sp_getKhoa4CB" ReturnType="Collection(ScheduleManagement.sp_getKhoa4CB_Result)" />
+    <FunctionImport Name="sp_getNganh4CB" ReturnType="Collection(ScheduleManagement.sp_getNganh4CB_Result)" />
   </EntityContainer>
   <ComplexType Name="sp_danhSachChiTietCTDT_Result">
     <Property Type="Int32" Name="Mã_chi_tiết_CTĐT" Nullable="false" />
@@ -906,5 +908,13 @@
   <ComplexType Name="sp_getPCGD4CB_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="Int32" Name="name" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getKhoa4CB_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_getNganh4CB_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

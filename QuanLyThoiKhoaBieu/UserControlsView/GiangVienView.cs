@@ -44,6 +44,7 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             {
                 MessageBox.Show("Không load được dữ liệu giảng viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            ShowCombobox.initCombobox(cbGioiTinh, gioiTinh);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -146,5 +147,21 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
         {
             ShowGridView.showDataGridView(dataGridThongTin, renderGridGiangVien());
         }
+
+        private void dataGridThongTin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
+            txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
+            txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+            dtngaySinh.Text = rows.Cells[2].Value == null ? "" : rows.Cells[2].Value.ToString();
+            cbGioiTinh.Text = rows.Cells[3].Value == null ? "" : (rows.Cells[3].Value.ToString() == "True" ? "Nam" : "Nữ");
+            txt5.Text = rows.Cells[4].Value == null ? "" : rows.Cells[4].Value.ToString();
+            txt6.Text = rows.Cells[5].Value == null ? "" : rows.Cells[5].Value.ToString();
+        }
+
+        private static List<Object> gioiTinh = new List<Object>() {
+            new {id= true, name = "Nam" },
+            new {id= false, name = "Nữ" }
+        };
     }
 }

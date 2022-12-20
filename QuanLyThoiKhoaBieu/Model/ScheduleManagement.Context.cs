@@ -828,5 +828,15 @@ namespace QuanLyThoiKhoaBieu.Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getPCGD4CB_Result>("sp_getPCGD4CB");
         }
+    
+        public virtual ObjectResult<sp_getKhoa4CB_Result> sp_getKhoa4CB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getKhoa4CB_Result>("sp_getKhoa4CB");
+        }
+    
+        public virtual ObjectResult<sp_getNganh4CB_Result> sp_getNganh4CB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getNganh4CB_Result>("sp_getNganh4CB");
+        }
     }
 }

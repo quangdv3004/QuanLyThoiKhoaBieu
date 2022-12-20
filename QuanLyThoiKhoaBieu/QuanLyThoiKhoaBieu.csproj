@@ -170,6 +170,12 @@
     <Compile Include="Model\sp_getHocPhan4CB_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sp_getKhoa4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_getNganh4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\sp_getPCGD4CB_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
@@ -196,17 +202,59 @@
     <Compile Include="ThoiKhoaBieu.Designer.cs">
       <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlsView\ChiTietCTDT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\ChiTietCTDT.Designer.cs">
+      <DependentUpon>ChiTietCTDT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsView\CTDTView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\CTDTView.Designer.cs">
+      <DependentUpon>CTDTView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsView\DangKyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\DangKyView.Designer.cs">
+      <DependentUpon>DangKyView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlsView\GiangVienView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlsView\GiangVienView.Designer.cs">
       <DependentUpon>GiangVienView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlsView\HocKyView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\HocKyView.Designer.cs">
+      <DependentUpon>HocKyView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsView\HocPhanView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\HocPhanView.Designer.cs">
+      <DependentUpon>HocPhanView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlsView\KhoaView.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlsView\KhoaView.Designer.cs">
       <DependentUpon>KhoaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsView\LopView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\LopView.Designer.cs">
+      <DependentUpon>LopView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsView\NganhView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\NganhView.Designer.cs">
+      <DependentUpon>NganhView.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlsView\PhongView.cs">
       <SubType>UserControl</SubType>
@@ -230,11 +278,32 @@
     <EmbeddedResource Include="ThoiKhoaBieu.resx">
       <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\ChiTietCTDT.resx">
+      <DependentUpon>ChiTietCTDT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\CTDTView.resx">
+      <DependentUpon>CTDTView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\DangKyView.resx">
+      <DependentUpon>DangKyView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlsView\GiangVienView.resx">
       <DependentUpon>GiangVienView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\HocKyView.resx">
+      <DependentUpon>HocKyView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\HocPhanView.resx">
+      <DependentUpon>HocPhanView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlsView\KhoaView.resx">
       <DependentUpon>KhoaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\LopView.resx">
+      <DependentUpon>LopView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\NganhView.resx">
+      <DependentUpon>NganhView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsView\PhongView.resx">
       <DependentUpon>PhongView.cs</DependentUpon>

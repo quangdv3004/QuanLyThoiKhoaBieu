@@ -98,22 +98,34 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-
+            status = 1;
+            EnableButton(false);
+            TextControl.emptyTxt(this);
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            status = 2;
+            EnableButton(false);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            status = 3;
+            EnableButton(false);
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+            TextControl.emptyTxt(this);
+            EnableButton();
+        }
 
+        private void dataGridThongTin_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
+            txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
+            txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
         }
     }
 }
