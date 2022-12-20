@@ -1,11 +1,13 @@
 ﻿using QuanLyThoiKhoaBieu.Model;
 using QuanLyThoiKhoaBieu.Services;
+using QuanLyThoiKhoaBieu.UserControlsView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +19,6 @@ namespace QuanLyThoiKhoaBieu
         ScheduleManagementEntities model = new ScheduleManagementEntities();
         int status = 0;
         int button = 0;
-
         ComboBox cbGioiTinh;
         ComboBox cbMaPCGD;
         ComboBox cbHocPhan;
@@ -37,16 +38,10 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-            hideLabelTextbox();
-            emptyTxt();
-            button = 1;
-            label1.Visible = true;
-            label1.Text = "Mã phòng";
-            txt1.Visible = true;
-            label2.Visible = true;
-            label2.Text = "Tên phòng";
-            txt2.Visible = true;
-            dataGridThongTin.DataSource = model.sp_danhSachPhong();
+            PhongView uc = new PhongView();
+            uc.Location = new Point(247, 39);
+            this.Controls.Add(uc);
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -66,27 +61,7 @@ namespace QuanLyThoiKhoaBieu
             switch (button)
             {
                 case 1:
-                    if (status == 1)
-                    {
-                        model.sp_themPhong(txt2.Text);
-                        MessageBox.Show("Thêm phòng thành công");
-                        EnableButton();
-                    }
-
-                    if (status == 2)
-                    {
-                        model.sp_suaPhong(int.Parse(txt1.Text), txt2.Text);
-                        MessageBox.Show("Sửa phòng thành công");
-                        EnableButton();
-                    }
-
-                    if (status == 3)
-                    {
-                        model.sp_xoaPhong(int.Parse(txt1.Text));
-                        MessageBox.Show("Xóa phòng thành công");
-                        EnableButton();
-                    }
-                    dataGridThongTin.DataSource = model.sp_danhSachPhong();
+                    
                     break;
                 case 2:
                     if (status == 1)
@@ -115,27 +90,7 @@ namespace QuanLyThoiKhoaBieu
                     dataGridThongTin.DataSource = model.sp_danhSachGiangVienFixSecond();
                     break;
                 case 3:
-                    if (status == 1)
-                    {
-                        model.sp_themKhoa(txt2.Text);
-                        MessageBox.Show("Thêm khoa thành công");
-                        EnableButton();
-                    }
-
-                    if (status == 2)
-                    {
-                        model.sp_suaKhoa(int.Parse(txt1.Text), txt2.Text);
-                        MessageBox.Show("Sửa khoa thành công");
-                        EnableButton();
-                    }
-
-                    if (status == 3)
-                    {
-                        model.sp_xoaKhoa(int.Parse(txt1.Text));
-                        MessageBox.Show("Xóa khoa thành công");
-                        EnableButton();
-                    }
-                    dataGridThongTin.DataSource = model.sp_danhSanhKhoa();
+                   
                     break;
                 case 4:
                     if (status == 1)
@@ -205,16 +160,9 @@ namespace QuanLyThoiKhoaBieu
             switch (button)
             {
                 case 1:
-                        txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
-                        txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+                        
                     break;
                 case 2:
-                    txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
-                    txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
-                    dtngaySinh.Text = rows.Cells[2].Value == null ? "" : rows.Cells[2].Value.ToString();
-                    cbGioiTinh.Text = rows.Cells[3].Value == null ? "" : (rows.Cells[3].Value.ToString() == "True" ? "Nam" : "Nữ");
-                    txt5.Text = rows.Cells[4].Value == null ? "" : rows.Cells[4].Value.ToString();
-                    txt6.Text = rows.Cells[5].Value == null ? "" : rows.Cells[5].Value.ToString();
                     break;
                 case 3:
                     txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
@@ -248,16 +196,15 @@ namespace QuanLyThoiKhoaBieu
             EnableButton();
         }
 
-        private void emptyTxt()
+        private static void emptyTxt(Form f)
         {
-            txt1.Text = "";
-            txt2.Text = "";
-            txt3.Text = "";
-            txt4.Text = "";
-            txt5.Text = "";
-            txt6.Text = "";
-            txt7.Text = "";
-            txt8.Text = "";
+            foreach (Control x in f.Controls)
+            {
+                if (x is TextBox)
+                {
+                    ((TextBox)x).Text = String.Empty;
+                }
+            }
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -284,83 +231,13 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnGiangVien_Click(object sender, EventArgs e)
         {
-            hideLabelTextbox();
-            emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSachGiangVienFixSecond();
-            button = 2;
-            string[] label = { "Mã giảng viên", "Tên giảng viên", "Ngày sinh", "Giới tính", "Email", "Điện thoại"};
-            display(6, label);
-            cbGioiTinh = new ComboBox();
-            dtngaySinh = new DateTimePicker();
-            ConvertTextBoxToDatePicker(txt3, dtngaySinh);
-            ConvertTextBoxToCBB(txt4, cbGioiTinh);
-            ShowCombobox.initCombobox(cbGioiTinh, gioiTinh);
-        }
-
-        private void hideLabelTextbox()
-        {
-            label1.Visible = false;
-            label2.Visible = false;
-            label3.Visible = false;
-            label4.Visible = false;
-            label5.Visible = false;
-            label6.Visible = false;
-            label7.Visible = false;
-            label8.Visible = false;
-            txt1.Visible = false;
-            txt2.Visible = false;
-            txt3.Visible = false;
-            txt4.Visible = false;
-            txt5.Visible = false;
-            txt6.Visible = false;
-            txt7.Visible = false;
-            txt8.Visible = false;
-            if (cbGioiTinh != null)
-            {
-                cbGioiTinh.Visible = false;
-            }            
-            if (cbGiangVien != null)
-            {
-                cbGiangVien.Visible = false;
-            }            
-            if (cbHocPhan != null)
-            {
-                cbHocPhan.Visible = false;
-            }            
-            if (cbHocKy != null)
-            {
-                cbHocKy.Visible = false;
-            }            
-            if (cbMaPCGD != null)
-            {
-                cbMaPCGD.Visible = false;
-            }
-            if (dtngaySinh != null)
-            {
-                dtngaySinh.Visible = false;
-            }
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
         }
-
-        private List<Object> renderGridPhong()
-        {
-            List<Model.Phong> render = model.Phongs.ToList();
-            if (txtSearch.Text != "")
-            {
-                string key = txtSearch.Text;
-                render = render.Where(u => u.tenPhong.Contains(key)).ToList();
-            }
-            List<Object> list = render.Select(u => new
-            {
-                maPhong = u.maPhong,
-                tenPhong = u.tenPhong,
-            }).ToList<Object>();
-            return list;
-        }           
+          
         private List<Object> renderGridHocKy()
         {
             List<Model.HocKy_NienKhoa> render = model.HocKy_NienKhoa.ToList();
@@ -377,50 +254,16 @@ namespace QuanLyThoiKhoaBieu
             }).ToList<Object>();
             return list;
         }                
-        private List<Object> renderGridKhoa()
-        {
-            List<Model.Khoa> render = model.Khoas.ToList();
-            if (txtSearch.Text != "")
-            {
-                string key = txtSearch.Text;
-                render = render.Where(u => u.tenKhoa.Contains(key)).ToList();
-            }
-            List<Object> list = render.Select(u => new
-            {
-                maKhoa = u.maKhoa,
-                tenKhoa = u.tenKhoa,
-            }).ToList<Object>();
-            return list;
-        }        
-        private List<Object> renderGridGiangVien()
-        {
-            List<Model.GiangVien> render = model.GiangViens.ToList();
-            if (txtSearch.Text != "")
-            {
-                string key = txtSearch.Text;
-                render = render.Where(u => u.tenGV.Contains(key) || u.email.Contains(key) || u.dienThoai.Contains(key)).ToList();
-            }
-            List<Object> list = render.Select(u => new
-            {
-                maGV = u.maGV,
-                tenGV = u.tenGV,
-                ngaySinh = u.ngaySinh,
-                gioiTinh = u.gioiTinh,
-                email = u.email,
-                dienThoai = u.dienThoai
-            }).ToList<Object>();
-            return list;
-        }
+      
 
         private void search(object sender, EventArgs e)
         {
             switch (button)
             {
                 case 1:
-                    ShowGridView.showDataGridView(dataGridThongTin, renderGridPhong());
+                    
                         break;                
                 case 2:
-                    ShowGridView.showDataGridView(dataGridThongTin, renderGridGiangVien());
                         break;
                 case 3:
                     ShowGridView.showDataGridView(dataGridThongTin, renderGridKhoa());
@@ -580,7 +423,7 @@ namespace QuanLyThoiKhoaBieu
             button = 3;
             hideLabelTextbox();
             emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSanhKhoa();
+
             string[] label = { "Mã khoa", "Tên khoa" };
             display(2, label);
         }
@@ -590,7 +433,14 @@ namespace QuanLyThoiKhoaBieu
             button = 4;
             hideLabelTextbox();
             emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSachHocKy();
+            try
+            {
+                ShowGridView.showDataGridView(dataGridThongTin, model.sp_danhSachHocKy());
+            }
+            catch
+            {
+                MessageBox.Show("Không load được dữ liệu học kỳ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             string[] label = { "Mã học kỳ", "Học kỳ", "Niên khóa" };
             display(3, label);
         }
@@ -600,7 +450,14 @@ namespace QuanLyThoiKhoaBieu
             button = 5;
             hideLabelTextbox();
             emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSachDangKy();
+            try
+            {
+                ShowGridView.showDataGridView(dataGridThongTin, model.sp_danhSachDangKy());
+            }
+            catch
+            {
+                MessageBox.Show("Không load được dữ liệu đăng ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             string[] label = { "Mã đăng kí", "Mã phân công giảng dạy", "Tên giảng viên", "Tên học phần","Học kỳ" };
             display(5, label);
             cbMaPCGD = new ComboBox();
