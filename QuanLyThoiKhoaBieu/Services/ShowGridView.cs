@@ -9,6 +9,7 @@ namespace QuanLyThoiKhoaBieu.Services
 {
     class ShowGridView
     {
+
         public static void showDataGridView(DataGridView gridView, dynamic data)
         {
 

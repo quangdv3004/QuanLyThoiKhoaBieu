@@ -34,6 +34,7 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
 
         private void GiangVienView_Load(object sender, EventArgs e)
         {
+            TextControl.emptyTxt(this);
             try
             {
                 List<sp_danhSachGiangVienFixSecond_Result> data = model.sp_danhSachGiangVienFixSecond().ToList<sp_danhSachGiangVienFixSecond_Result>();
