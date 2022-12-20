@@ -1,11 +1,13 @@
 ﻿using QuanLyThoiKhoaBieu.Model;
 using QuanLyThoiKhoaBieu.Services;
+using QuanLyThoiKhoaBieu.UserControlsView;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +19,6 @@ namespace QuanLyThoiKhoaBieu
         ScheduleManagementEntities model = new ScheduleManagementEntities();
         int status = 0;
         int button = 0;
-
         ComboBox cbGioiTinh;
         ComboBox cbMaPCGD;
         ComboBox cbHocPhan;
@@ -37,16 +38,26 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-            hideLabelTextbox();
-            emptyTxt();
-            button = 1;
-            label1.Visible = true;
-            label1.Text = "Mã phòng";
-            txt1.Visible = true;
-            label2.Visible = true;
-            label2.Text = "Tên phòng";
-            txt2.Visible = true;
-            dataGridThongTin.DataSource = model.sp_danhSachPhong();
+            PhongView uc = new PhongView();
+            uc.Location = new Point(247, 39);
+            this.Controls.Add(uc);
+            //hideLabelTextbox();
+            //emptyTxt();
+            //button = 1;
+            //label1.Visible = true;
+            //label1.Text = "Mã phòng";
+            //txt1.Visible = true;
+            //label2.Visible = true;
+            //label2.Text = "Tên phòng";
+            //txt2.Visible = true;
+            //try 
+            //{
+            //    ShowGridView.showDataGridView(dataGridThongTin, model.sp_danhSachPhong());
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("Không load được dữ liệu phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -286,7 +297,15 @@ namespace QuanLyThoiKhoaBieu
         {
             hideLabelTextbox();
             emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSachGiangVienFixSecond();
+            try
+            {
+                List< sp_danhSachGiangVienFixSecond_Result> data = model.sp_danhSachGiangVienFixSecond().ToList<sp_danhSachGiangVienFixSecond_Result>();
+                ShowGridView.showDataGridView(dataGridThongTin, data);
+            }
+            catch
+            {
+                MessageBox.Show("Không load được dữ liệu giảng viên", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             button = 2;
             string[] label = { "Mã giảng viên", "Tên giảng viên", "Ngày sinh", "Giới tính", "Email", "Điện thoại"};
             display(6, label);
@@ -580,7 +599,14 @@ namespace QuanLyThoiKhoaBieu
             button = 3;
             hideLabelTextbox();
             emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSanhKhoa();
+            try
+            {
+                ShowGridView.showDataGridView(dataGridThongTin, model.sp_danhSanhKhoa());
+            }
+            catch
+            {
+                MessageBox.Show("Không load được dữ liệu phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             string[] label = { "Mã khoa", "Tên khoa" };
             display(2, label);
         }
@@ -590,7 +616,14 @@ namespace QuanLyThoiKhoaBieu
             button = 4;
             hideLabelTextbox();
             emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSachHocKy();
+            try
+            {
+                ShowGridView.showDataGridView(dataGridThongTin, model.sp_danhSachHocKy());
+            }
+            catch
+            {
+                MessageBox.Show("Không load được dữ liệu học kỳ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             string[] label = { "Mã học kỳ", "Học kỳ", "Niên khóa" };
             display(3, label);
         }
@@ -600,7 +633,14 @@ namespace QuanLyThoiKhoaBieu
             button = 5;
             hideLabelTextbox();
             emptyTxt();
-            dataGridThongTin.DataSource = model.sp_danhSachDangKy();
+            try
+            {
+                ShowGridView.showDataGridView(dataGridThongTin, model.sp_danhSachDangKy());
+            }
+            catch
+            {
+                MessageBox.Show("Không load được dữ liệu đăng ký", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             string[] label = { "Mã đăng kí", "Mã phân công giảng dạy", "Tên giảng viên", "Tên học phần","Học kỳ" };
             display(5, label);
             cbMaPCGD = new ComboBox();

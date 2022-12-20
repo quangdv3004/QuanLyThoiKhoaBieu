@@ -11,13 +11,11 @@ namespace QuanLyThoiKhoaBieu.Services
     {
         public static void showDataGridView(DataGridView gridView, dynamic data)
         {
-            if (data.Count == 0)
-            {
-                return;
-            }
 
             gridView.Columns.Clear();
             gridView.DataSource = data;
+            gridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
     }
 }

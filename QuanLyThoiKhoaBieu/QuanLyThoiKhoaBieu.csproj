@@ -191,6 +191,12 @@
     <Compile Include="ThoiKhoaBieu.Designer.cs">
       <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlsView\PhongView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\PhongView.Designer.cs">
+      <DependentUpon>PhongView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +212,9 @@
     </Compile>
     <EmbeddedResource Include="ThoiKhoaBieu.resx">
       <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\PhongView.resx">
+      <DependentUpon>PhongView.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\ScheduleManagement.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -263,5 +272,6 @@
     <None Include="Resources\Start-Menu-Search-icon.png" />
     <None Include="Resources\wall-calendar-clip-branding-mockup_460658-215.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

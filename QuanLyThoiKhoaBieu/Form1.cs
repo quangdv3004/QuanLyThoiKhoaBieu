@@ -42,7 +42,7 @@ namespace QuanLyThoiKhoaBieu
             string pass = txtMatKhau.Text;
             if (model.SinhViens.Any(u => u.tenDangNhap == username && u.matKhau == pass))
             {
-                MessageBox.Show("Đăng nhập thành công");
+                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Program.userLogged = model.SinhViens.FirstOrDefault(u => u.tenDangNhap == username && u.matKhau == pass);
                 ThoiKhoaBieu tkb = new ThoiKhoaBieu();
                 tkb.ShowDialog();
