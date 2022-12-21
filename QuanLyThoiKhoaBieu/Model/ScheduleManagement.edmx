@@ -442,6 +442,8 @@
         <Function Name="sp_getGiangVien4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getHocKy4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getHocPhan4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getKhoa4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getNganh4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getPCGD4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
@@ -1489,6 +1491,8 @@
           <FunctionImport Name="sp_getHocKy4CB" ReturnType="Collection(ScheduleManagement.sp_getHocKy4CB_Result)" />
           <FunctionImport Name="sp_getHocPhan4CB" ReturnType="Collection(ScheduleManagement.sp_getHocPhan4CB_Result)" />
           <FunctionImport Name="sp_getPCGD4CB" ReturnType="Collection(ScheduleManagement.sp_getPCGD4CB_Result)" />
+          <FunctionImport Name="sp_getKhoa4CB" ReturnType="Collection(ScheduleManagement.sp_getKhoa4CB_Result)" />
+          <FunctionImport Name="sp_getNganh4CB" ReturnType="Collection(ScheduleManagement.sp_getNganh4CB_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_danhSachChiTietCTDT_Result">
           <Property Type="Int32" Name="Mã_chi_tiết_CTĐT" Nullable="false" />
@@ -1645,6 +1649,14 @@
         <ComplexType Name="sp_getPCGD4CB_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="Int32" Name="name" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getKhoa4CB_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_getNganh4CB_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2057,6 +2069,22 @@
           <FunctionImportMapping FunctionImportName="sp_getPCGD4CB" FunctionName="ScheduleManagement.Store.sp_getPCGD4CB">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ScheduleManagement.sp_getPCGD4CB_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getKhoa4CB" FunctionName="ScheduleManagement.Store.sp_getKhoa4CB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScheduleManagement.sp_getKhoa4CB_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getNganh4CB" FunctionName="ScheduleManagement.Store.sp_getNganh4CB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScheduleManagement.sp_getNganh4CB_Result">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
               </ComplexTypeMapping>

@@ -411,5 +411,21 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getKhoa4CB" FunctionName="ScheduleManagement.Store.sp_getKhoa4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getKhoa4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getNganh4CB" FunctionName="ScheduleManagement.Store.sp_getNganh4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getNganh4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

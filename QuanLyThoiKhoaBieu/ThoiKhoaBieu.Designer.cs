@@ -33,7 +33,6 @@ namespace QuanLyThoiKhoaBieu
             this.tabTrangChu = new System.Windows.Forms.TabPage();
             this.tabHeThong = new System.Windows.Forms.TabPage();
             this.tabQuanLy = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLop = new System.Windows.Forms.Button();
             this.btnSinhVien = new System.Windows.Forms.Button();
             this.btnNganh = new System.Windows.Forms.Button();
@@ -47,7 +46,7 @@ namespace QuanLyThoiKhoaBieu
             this.btnHocPhan = new System.Windows.Forms.Button();
             this.btnGiangVien = new System.Windows.Forms.Button();
             this.btnPhong = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabQuanLy.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -65,18 +64,18 @@ namespace QuanLyThoiKhoaBieu
             this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1478, 608);
+            this.tabControl1.Size = new System.Drawing.Size(1478, 617);
             this.tabControl1.TabIndex = 0;
             // 
             // tabTrangChu
             // 
             this.tabTrangChu.BackColor = System.Drawing.Color.White;
             this.tabTrangChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabTrangChu.Location = new System.Drawing.Point(4, 26);
+            this.tabTrangChu.Location = new System.Drawing.Point(4, 29);
             this.tabTrangChu.Margin = new System.Windows.Forms.Padding(4);
             this.tabTrangChu.Name = "tabTrangChu";
             this.tabTrangChu.Padding = new System.Windows.Forms.Padding(4);
-            this.tabTrangChu.Size = new System.Drawing.Size(1470, 578);
+            this.tabTrangChu.Size = new System.Drawing.Size(1470, 584);
             this.tabTrangChu.TabIndex = 0;
             this.tabTrangChu.Text = "Trang chủ";
             // 
@@ -84,11 +83,11 @@ namespace QuanLyThoiKhoaBieu
             // 
             this.tabHeThong.BackColor = System.Drawing.Color.White;
             this.tabHeThong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabHeThong.Location = new System.Drawing.Point(4, 26);
+            this.tabHeThong.Location = new System.Drawing.Point(4, 29);
             this.tabHeThong.Margin = new System.Windows.Forms.Padding(4);
             this.tabHeThong.Name = "tabHeThong";
             this.tabHeThong.Padding = new System.Windows.Forms.Padding(4);
-            this.tabHeThong.Size = new System.Drawing.Size(1470, 578);
+            this.tabHeThong.Size = new System.Drawing.Size(1470, 584);
             this.tabHeThong.TabIndex = 1;
             this.tabHeThong.Text = "Hệ thống";
             this.tabHeThong.Click += new System.EventHandler(this.tabHeThong_Click);
@@ -96,7 +95,6 @@ namespace QuanLyThoiKhoaBieu
             // tabQuanLy
             // 
             this.tabQuanLy.BackColor = System.Drawing.Color.White;
-            this.tabQuanLy.Controls.Add(this.groupBox1);
             this.tabQuanLy.Controls.Add(this.pictureBox1);
             this.tabQuanLy.Controls.Add(this.btnLop);
             this.tabQuanLy.Controls.Add(this.btnSinhVien);
@@ -113,23 +111,13 @@ namespace QuanLyThoiKhoaBieu
             this.tabQuanLy.Controls.Add(this.btnPhong);
             this.tabQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabQuanLy.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.tabQuanLy.Location = new System.Drawing.Point(4, 26);
+            this.tabQuanLy.Location = new System.Drawing.Point(4, 29);
             this.tabQuanLy.Margin = new System.Windows.Forms.Padding(4);
             this.tabQuanLy.Name = "tabQuanLy";
-            this.tabQuanLy.Size = new System.Drawing.Size(1470, 578);
+            this.tabQuanLy.Size = new System.Drawing.Size(1470, 584);
             this.tabQuanLy.TabIndex = 2;
             this.tabQuanLy.Text = "Quản lý";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.wall_calendar_clip_branding_mockup_460658_215;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 32);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(241, 564);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.tabQuanLy.Click += new System.EventHandler(this.tabQuanLy_Click);
             // 
             // btnLop
             // 
@@ -139,6 +127,7 @@ namespace QuanLyThoiKhoaBieu
             this.btnLop.TabIndex = 0;
             this.btnLop.Text = "Lớp";
             this.btnLop.UseVisualStyleBackColor = true;
+            this.btnLop.Click += new System.EventHandler(this.btnLop_Click);
             // 
             // btnSinhVien
             // 
@@ -157,6 +146,7 @@ namespace QuanLyThoiKhoaBieu
             this.btnNganh.TabIndex = 0;
             this.btnNganh.Text = "Ngành";
             this.btnNganh.UseVisualStyleBackColor = true;
+            this.btnNganh.Click += new System.EventHandler(this.btnNganh_Click);
             // 
             // btnTKB
             // 
@@ -213,6 +203,7 @@ namespace QuanLyThoiKhoaBieu
             this.btnCTDT.TabIndex = 0;
             this.btnCTDT.Text = "CTDT";
             this.btnCTDT.UseVisualStyleBackColor = true;
+            this.btnCTDT.Click += new System.EventHandler(this.btnCTDT_Click);
             // 
             // btnHKNK
             // 
@@ -232,6 +223,7 @@ namespace QuanLyThoiKhoaBieu
             this.btnHocPhan.TabIndex = 0;
             this.btnHocPhan.Text = "Học phần";
             this.btnHocPhan.UseVisualStyleBackColor = true;
+            this.btnHocPhan.Click += new System.EventHandler(this.btnHocPhan_Click);
             // 
             // btnGiangVien
             // 
@@ -252,27 +244,34 @@ namespace QuanLyThoiKhoaBieu
             this.btnPhong.Text = "Phòng";
             this.btnPhong.UseVisualStyleBackColor = true;
             this.btnPhong.Click += new System.EventHandler(this.btnPhong_Click);
+            this.btnPhong.MouseLeave += new System.EventHandler(this.btnPhong_MouseLeave);
+            this.btnPhong.ChangeUICues += new System.Windows.Forms.UICuesEventHandler(this.btnPhong_ChangeUICues);
+            this.btnPhong.StyleChanged += new System.EventHandler(this.btnPhong_StyleChanged);
+            this.btnPhong.SystemColorsChanged += new System.EventHandler(this.btnPhong_SystemColorsChanged);
             // 
-            // groupBox1
+            // pictureBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(247, 39);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1009, 531);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.pictureBox1.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.wall_calendar_clip_branding_mockup_460658_215;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(241, 564);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // ThoiKhoaBieu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 608);
+            this.ClientSize = new System.Drawing.Size(1272, 617);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ThoiKhoaBieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thời khóa biểu";
+            this.Load += new System.EventHandler(this.ThoiKhoaBieu_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabQuanLy.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -300,6 +299,5 @@ namespace QuanLyThoiKhoaBieu
         private System.Windows.Forms.Button btnGiangVien;
         private System.Windows.Forms.Button btnPhong;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
