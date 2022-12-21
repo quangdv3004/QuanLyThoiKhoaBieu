@@ -31,7 +31,6 @@ D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu
 D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.csproj.CopyComplete
 D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.exe
 D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.pdb
-D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.UserControl1.resources
 D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.PhongView.resources
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.DangKyView.resources
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.GiangVienView.resources
@@ -41,3 +40,11 @@ E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.NganhView.resources
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.LopView.resources
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.HocPhanView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.CTDTView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.DangKyView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.GiangVienView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.HocKyView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.HocPhanView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.KhoaView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.LopView.resources
+D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.NganhView.resources

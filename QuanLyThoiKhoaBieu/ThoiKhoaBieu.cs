@@ -6,26 +6,40 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static QuanLyThoiKhoaBieu.ThoiKhoaBieu;
 
 namespace QuanLyThoiKhoaBieu
 {
+
     public partial class ThoiKhoaBieu : Form
     {
+        public class formActions
+        {
+            public string name { get;}
+            public UserControl view { get; set; }
+            public bool active { get; set; } = false;
+            public Control FormControl { get; set; }
+
+            public formActions(Control f, UserControl View)
+            {
+                if(View != null)
+                {
+                    view= View;
+                    FormControl = f;
+                    name = view.Name;
+                    view.Location = new Point(185, 25);
+                }
+            }
+        }
+        List<formActions> actions = new List<formActions>();
         ScheduleManagementEntities model = new ScheduleManagementEntities();
-        PhongView uc = new PhongView();
-        DangKyView dk = new DangKyView();
-        GiangVienView gv = new GiangVienView();
-        HocKyView hk = new HocKyView();
-        KhoaView khoa = new KhoaView();
-        NganhView nganh = new NganhView();
-        LopView lop = new LopView();
-        HocPhanView hp = new HocPhanView();
-        CTDTView ctdt = new CTDTView();
+
         public ThoiKhoaBieu()
         {
             InitializeComponent();
@@ -38,9 +52,7 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
-            
-            uc.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(uc);
+            setHideAndPush("PhongView");
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -50,38 +62,69 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnGiangVien_Click(object sender, EventArgs e)
         {
-            gv.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(gv);
+            setHideAndPush("GiangVienView");
         }
 
         private void btnKhoa_Click(object sender, EventArgs e)
         {
-            khoa.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(khoa);
+            setHideAndPush("KhoaView");
         }
 
         private void btnHKNK_Click(object sender, EventArgs e)
         {
-            hk.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(hk);
+            setHideAndPush("HocKyView");
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
-            dk.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(dk);
+            setHideAndPush("DangKyView");
         }
 
         private void tabQuanLy_Click(object sender, EventArgs e)
         {
 
         }
+        private void setHideAndPush(string formName)
+        {
+            foreach(formActions viewActive in actions.Where(u => u.active == true))
+            {
+                if(formName == viewActive.name)
+                {
+                    continue;
 
+                }
+                viewActive.FormControl.Controls.Remove(viewActive.view);
+                viewActive.active = false;
+            }
+            if(!actions.Any(u => u.name == formName &&  u.active == true))
+            {
+                var view = actions.FirstOrDefault(u => u.name == formName && u.active == false);
+                if(view != null)
+                {
+                    view.FormControl.Controls.Add(view.view);
+                    view.active = true;
+                }
+                else
+                {
+                    MessageBox.Show("Không tìm thấy view");
+                }
+              
+            }
+        }
         private void ThoiKhoaBieu_Load(object sender, EventArgs e)
         {
+            actions.Add(new formActions(tabQuanLy, new PhongView()));
+            actions.Add(new formActions(tabQuanLy, new DangKyView()) );
+            actions.Add(new formActions(tabQuanLy, new GiangVienView()));
+            actions.Add(new formActions(tabQuanLy, new KhoaView()));
+            actions.Add(new formActions(tabQuanLy, new NganhView()));
 
+            actions.Add(new formActions(tabQuanLy, new HocKyView()) );
+            actions.Add(new formActions(tabQuanLy, new LopView()));
+            actions.Add(new formActions(tabQuanLy, new HocPhanView()) );
+            actions.Add(new formActions(tabQuanLy, new CTDTView()));
         }
-
+        
         private void btnPhong_MouseLeave(object sender, EventArgs e)
         {
         }
@@ -102,26 +145,22 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnNganh_Click(object sender, EventArgs e)
         {
-            nganh.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(nganh);
+            setHideAndPush("NganhView");
         }
 
         private void btnLop_Click(object sender, EventArgs e)
         {
-            lop.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(lop);
+            setHideAndPush("LopView");
         }
 
         private void btnHocPhan_Click(object sender, EventArgs e)
         {
-            hp.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(hp);
+            setHideAndPush("HocPhanView");
         }
 
         private void btnCTDT_Click(object sender, EventArgs e)
         {
-            ctdt.Location = new Point(185, 25);
-            tabQuanLy.Controls.Add(ctdt);
+            setHideAndPush("CTDTView");
         }
     }
 }

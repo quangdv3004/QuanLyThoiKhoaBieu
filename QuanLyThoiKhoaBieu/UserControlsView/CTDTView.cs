@@ -78,7 +78,27 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            if (status == 1)
+            {
+                model.sp_themCTDT(txtTenCTDT.Text, txtTimeDT.Text, dtngayKy.Value, int.Parse(cbNganh.SelectedValue.ToString()));
+                MessageBox.Show("Thêm chương trình đào tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                EnableButton();
+            }
 
+            if (status == 2)
+            {
+                model.sp_suaCTDT(int.Parse(txt1.Text),txtTenCTDT.Text, txtTimeDT.Text, dtngayKy.Value, int.Parse(cbNganh.SelectedValue.ToString()));
+                MessageBox.Show("Sửa  chương trình đào tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                EnableButton();
+            }
+
+            if (status == 3)
+            {
+                model.sp_xoaCTDT(int.Parse(txt1.Text));
+                MessageBox.Show("Xóa  chương trình đào tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                EnableButton();
+            }
+            dataGridThongTin.DataSource = model.sp_danhSachCTDT();
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
