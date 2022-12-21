@@ -202,12 +202,6 @@
     <Compile Include="ThoiKhoaBieu.Designer.cs">
       <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlsView\ChiTietCTDT.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlsView\ChiTietCTDT.Designer.cs">
-      <DependentUpon>ChiTietCTDT.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlsView\CTDTView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -277,9 +271,6 @@
     </Compile>
     <EmbeddedResource Include="ThoiKhoaBieu.resx">
       <DependentUpon>ThoiKhoaBieu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlsView\ChiTietCTDT.resx">
-      <DependentUpon>ChiTietCTDT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsView\CTDTView.resx">
       <DependentUpon>CTDTView.cs</DependentUpon>

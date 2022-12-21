@@ -52,7 +52,7 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
         {
             if (status == 1)
             {
-                model.sp_themDangKy((int)cbMaPCGD.SelectedValue, (int)cbHocPhan.SelectedValue, (int)cbGiangVien.SelectedValue, (int)cbHocKy.SelectedValue);
+                model.sp_themDangKy(int.Parse(cbMaPCGD.SelectedValue.ToString()), int.Parse(cbHocPhan.SelectedValue.ToString()), int.Parse(cbGiangVien.SelectedValue.ToString()), int.Parse(cbHocKy.SelectedValue.ToString()));
                 MessageBox.Show("Thêm đăng ký thành công");
                 EnableButton();
             }
