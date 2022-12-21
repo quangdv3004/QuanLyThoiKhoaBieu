@@ -48,3 +48,6 @@ D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu
 D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.KhoaView.resources
 D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.LopView.resources
 D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.NganhView.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.CTDTView.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.ChiTietCTDT.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.SinhVienView.resources

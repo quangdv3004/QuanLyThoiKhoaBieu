@@ -137,6 +137,7 @@ namespace QuanLyThoiKhoaBieu
             this.btnSinhVien.TabIndex = 0;
             this.btnSinhVien.Text = "Sinh viên";
             this.btnSinhVien.UseVisualStyleBackColor = true;
+            this.btnSinhVien.Click += new System.EventHandler(this.btnSinhVien_Click);
             // 
             // btnNganh
             // 
@@ -165,6 +166,7 @@ namespace QuanLyThoiKhoaBieu
             this.btnCTCTDT.TabIndex = 0;
             this.btnCTCTDT.Text = "CT_CTDT";
             this.btnCTCTDT.UseVisualStyleBackColor = true;
+            this.btnCTCTDT.Click += new System.EventHandler(this.btnCTCTDT_Click);
             // 
             // btnDangKy
             // 
@@ -271,6 +273,7 @@ namespace QuanLyThoiKhoaBieu
             this.Name = "ThoiKhoaBieu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thời khóa biểu";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ThoiKhoaBieu_FormClosed);
             this.Load += new System.EventHandler(this.ThoiKhoaBieu_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabQuanLy.ResumeLayout(false);

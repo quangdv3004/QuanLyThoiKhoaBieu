@@ -163,5 +163,10 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             new {id= true, name = "Nam" },
             new {id= false, name = "Nữ" }
         };
+
+        private void cbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -111,6 +111,7 @@
     <Property Name="maHK" Type="int" />
     <Property Name="tenDangNhap" Type="varchar" MaxLength="20" />
     <Property Name="matKhau" Type="varchar" MaxLength="20" />
+    <Property Name="avatar" Type="image" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -426,6 +427,8 @@
   <Function Name="sp_danhSachPCGD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_danhSachPhong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_danhSachSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_danhSachSinhVienSecond" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_danhSachSinhVienThird" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_danhSachTKB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="maSV" Type="int" Mode="In" />
   </Function>
@@ -434,10 +437,12 @@
     <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
     <Parameter Name="owner_id" Type="int" Mode="In" />
   </Function>
+  <Function Name="sp_getCTDT4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_getGiangVien4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_getHocKy4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_getHocPhan4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_getKhoa4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_getLop4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_getNganh4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_getPCGD4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -514,6 +519,22 @@
     <Parameter Name="maPhong" Type="int" Mode="In" />
     <Parameter Name="tenPhong" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_suaSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maSV" Type="int" Mode="In" />
+    <Parameter Name="tenSV" Type="nvarchar" Mode="In" />
+    <Parameter Name="maLop" Type="int" Mode="In" />
+    <Parameter Name="ngaySinh" Type="datetime" Mode="In" />
+    <Parameter Name="gioiTinh" Type="bit" Mode="In" />
+    <Parameter Name="diaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="dienThoai" Type="nvarchar" Mode="In" />
+    <Parameter Name="maDangKy" Type="int" Mode="In" />
+    <Parameter Name="maHP" Type="int" Mode="In" />
+    <Parameter Name="maHK" Type="int" Mode="In" />
+    <Parameter Name="tenDangNhap" Type="varchar" Mode="In" />
+    <Parameter Name="matKhau" Type="varchar" Mode="In" />
+    <Parameter Name="avatar" Type="image" Mode="In" />
+  </Function>
   <Function Name="sp_suaThoiKHoaBieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="maTKB" Type="int" Mode="In" />
     <Parameter Name="thu" Type="nvarchar" Mode="In" />
@@ -581,6 +602,21 @@
   <Function Name="sp_themPhong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="tenPhong" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_themSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="tenSV" Type="nvarchar" Mode="In" />
+    <Parameter Name="maLop" Type="int" Mode="In" />
+    <Parameter Name="ngaySinh" Type="datetime" Mode="In" />
+    <Parameter Name="gioiTinh" Type="bit" Mode="In" />
+    <Parameter Name="diaChi" Type="nvarchar" Mode="In" />
+    <Parameter Name="email" Type="nvarchar" Mode="In" />
+    <Parameter Name="dienThoai" Type="nvarchar" Mode="In" />
+    <Parameter Name="maDangKy" Type="int" Mode="In" />
+    <Parameter Name="maHP" Type="int" Mode="In" />
+    <Parameter Name="maHK" Type="int" Mode="In" />
+    <Parameter Name="tenDangNhap" Type="varchar" Mode="In" />
+    <Parameter Name="matKhau" Type="varchar" Mode="In" />
+    <Parameter Name="avatar" Type="image" Mode="In" />
+  </Function>
   <Function Name="sp_themThoiKHoaBieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="thu" Type="nvarchar" Mode="In" />
     <Parameter Name="tiet" Type="int" Mode="In" />
@@ -624,6 +660,9 @@
   </Function>
   <Function Name="sp_xoaPhong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="maPhong" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_xoaSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="maSV" Type="int" Mode="In" />
   </Function>
   <Function Name="sp_xoaThoiKhoaBieu" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="maTKB" Type="int" Mode="In" />

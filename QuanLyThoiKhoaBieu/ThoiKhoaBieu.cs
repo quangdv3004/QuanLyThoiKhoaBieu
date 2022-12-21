@@ -52,6 +52,7 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnPhong_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("PhongView");
         }
 
@@ -62,21 +63,25 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnGiangVien_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("GiangVienView");
         }
 
         private void btnKhoa_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("KhoaView");
         }
 
         private void btnHKNK_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("HocKyView");
         }
 
         private void btnDangKy_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("DangKyView");
         }
 
@@ -123,6 +128,7 @@ namespace QuanLyThoiKhoaBieu
             actions.Add(new formActions(tabQuanLy, new LopView()));
             actions.Add(new formActions(tabQuanLy, new HocPhanView()) );
             actions.Add(new formActions(tabQuanLy, new CTDTView()));
+            actions.Add(new formActions(tabQuanLy, new UserControlsView.ChiTietCTDT()));
         }
         
         private void btnPhong_MouseLeave(object sender, EventArgs e)
@@ -145,22 +151,58 @@ namespace QuanLyThoiKhoaBieu
 
         private void btnNganh_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("NganhView");
         }
 
         private void btnLop_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("LopView");
         }
 
         private void btnHocPhan_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("HocPhanView");
         }
 
         private void btnCTDT_Click(object sender, EventArgs e)
         {
+            reloadViewControl();
             setHideAndPush("CTDTView");
+        }
+
+        private void ThoiKhoaBieu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnCTCTDT_Click(object sender, EventArgs e)
+        {
+            reloadViewControl();
+            setHideAndPush("ChiTietCTDT");
+        }
+
+        private void reloadViewControl()
+        {
+            actions.Add(new formActions(tabQuanLy, new PhongView()));
+            actions.Add(new formActions(tabQuanLy, new DangKyView()));
+            actions.Add(new formActions(tabQuanLy, new GiangVienView()));
+            actions.Add(new formActions(tabQuanLy, new KhoaView()));
+            actions.Add(new formActions(tabQuanLy, new NganhView()));
+            actions.Add(new formActions(tabQuanLy, new HocKyView()));
+            actions.Add(new formActions(tabQuanLy, new LopView()));
+            actions.Add(new formActions(tabQuanLy, new HocPhanView()));
+            actions.Add(new formActions(tabQuanLy, new CTDTView()));
+            actions.Add(new formActions(tabQuanLy, new SinhVienView()));
+            actions.Add(new formActions(tabQuanLy, new UserControlsView.ChiTietCTDT()));
+        }
+
+        private void btnSinhVien_Click(object sender, EventArgs e)
+        {
+            reloadViewControl();
+            setHideAndPush("SinhVienView");
         }
     }
 }

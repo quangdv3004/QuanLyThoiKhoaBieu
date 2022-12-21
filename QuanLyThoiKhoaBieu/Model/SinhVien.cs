@@ -27,6 +27,7 @@ namespace QuanLyThoiKhoaBieu.Model
         public Nullable<int> maHK { get; set; }
         public string tenDangNhap { get; set; }
         public string matKhau { get; set; }
+        public byte[] avatar { get; set; }
     
         public virtual DangKy DangKy { get; set; }
         public virtual HocKy_NienKhoa HocKy_NienKhoa { get; set; }

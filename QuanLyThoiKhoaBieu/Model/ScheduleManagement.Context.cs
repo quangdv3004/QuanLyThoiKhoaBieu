@@ -838,5 +838,152 @@ namespace QuanLyThoiKhoaBieu.Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getNganh4CB_Result>("sp_getNganh4CB");
         }
+    
+        public virtual ObjectResult<sp_getCTDT4CB_Result> sp_getCTDT4CB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getCTDT4CB_Result>("sp_getCTDT4CB");
+        }
+    
+        public virtual ObjectResult<sp_danhSachSinhVienSecond_Result> sp_danhSachSinhVienSecond()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_danhSachSinhVienSecond_Result>("sp_danhSachSinhVienSecond");
+        }
+    
+        public virtual int sp_suaSinhVien(Nullable<int> maSV, string tenSV, Nullable<int> maLop, Nullable<System.DateTime> ngaySinh, Nullable<bool> gioiTinh, string diaChi, string email, string dienThoai, Nullable<int> maDangKy, Nullable<int> maHP, Nullable<int> maHK, string tenDangNhap, string matKhau, byte[] avatar)
+        {
+            var maSVParameter = maSV.HasValue ?
+                new ObjectParameter("maSV", maSV) :
+                new ObjectParameter("maSV", typeof(int));
+    
+            var tenSVParameter = tenSV != null ?
+                new ObjectParameter("tenSV", tenSV) :
+                new ObjectParameter("tenSV", typeof(string));
+    
+            var maLopParameter = maLop.HasValue ?
+                new ObjectParameter("maLop", maLop) :
+                new ObjectParameter("maLop", typeof(int));
+    
+            var ngaySinhParameter = ngaySinh.HasValue ?
+                new ObjectParameter("ngaySinh", ngaySinh) :
+                new ObjectParameter("ngaySinh", typeof(System.DateTime));
+    
+            var gioiTinhParameter = gioiTinh.HasValue ?
+                new ObjectParameter("gioiTinh", gioiTinh) :
+                new ObjectParameter("gioiTinh", typeof(bool));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("diaChi", diaChi) :
+                new ObjectParameter("diaChi", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var dienThoaiParameter = dienThoai != null ?
+                new ObjectParameter("dienThoai", dienThoai) :
+                new ObjectParameter("dienThoai", typeof(string));
+    
+            var maDangKyParameter = maDangKy.HasValue ?
+                new ObjectParameter("maDangKy", maDangKy) :
+                new ObjectParameter("maDangKy", typeof(int));
+    
+            var maHPParameter = maHP.HasValue ?
+                new ObjectParameter("maHP", maHP) :
+                new ObjectParameter("maHP", typeof(int));
+    
+            var maHKParameter = maHK.HasValue ?
+                new ObjectParameter("maHK", maHK) :
+                new ObjectParameter("maHK", typeof(int));
+    
+            var tenDangNhapParameter = tenDangNhap != null ?
+                new ObjectParameter("tenDangNhap", tenDangNhap) :
+                new ObjectParameter("tenDangNhap", typeof(string));
+    
+            var matKhauParameter = matKhau != null ?
+                new ObjectParameter("matKhau", matKhau) :
+                new ObjectParameter("matKhau", typeof(string));
+    
+            var avatarParameter = avatar != null ?
+                new ObjectParameter("avatar", avatar) :
+                new ObjectParameter("avatar", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_suaSinhVien", maSVParameter, tenSVParameter, maLopParameter, ngaySinhParameter, gioiTinhParameter, diaChiParameter, emailParameter, dienThoaiParameter, maDangKyParameter, maHPParameter, maHKParameter, tenDangNhapParameter, matKhauParameter, avatarParameter);
+        }
+    
+        public virtual int sp_themSinhVien(string tenSV, Nullable<int> maLop, Nullable<System.DateTime> ngaySinh, Nullable<bool> gioiTinh, string diaChi, string email, string dienThoai, Nullable<int> maDangKy, Nullable<int> maHP, Nullable<int> maHK, string tenDangNhap, string matKhau, byte[] avatar)
+        {
+            var tenSVParameter = tenSV != null ?
+                new ObjectParameter("tenSV", tenSV) :
+                new ObjectParameter("tenSV", typeof(string));
+    
+            var maLopParameter = maLop.HasValue ?
+                new ObjectParameter("maLop", maLop) :
+                new ObjectParameter("maLop", typeof(int));
+    
+            var ngaySinhParameter = ngaySinh.HasValue ?
+                new ObjectParameter("ngaySinh", ngaySinh) :
+                new ObjectParameter("ngaySinh", typeof(System.DateTime));
+    
+            var gioiTinhParameter = gioiTinh.HasValue ?
+                new ObjectParameter("gioiTinh", gioiTinh) :
+                new ObjectParameter("gioiTinh", typeof(bool));
+    
+            var diaChiParameter = diaChi != null ?
+                new ObjectParameter("diaChi", diaChi) :
+                new ObjectParameter("diaChi", typeof(string));
+    
+            var emailParameter = email != null ?
+                new ObjectParameter("email", email) :
+                new ObjectParameter("email", typeof(string));
+    
+            var dienThoaiParameter = dienThoai != null ?
+                new ObjectParameter("dienThoai", dienThoai) :
+                new ObjectParameter("dienThoai", typeof(string));
+    
+            var maDangKyParameter = maDangKy.HasValue ?
+                new ObjectParameter("maDangKy", maDangKy) :
+                new ObjectParameter("maDangKy", typeof(int));
+    
+            var maHPParameter = maHP.HasValue ?
+                new ObjectParameter("maHP", maHP) :
+                new ObjectParameter("maHP", typeof(int));
+    
+            var maHKParameter = maHK.HasValue ?
+                new ObjectParameter("maHK", maHK) :
+                new ObjectParameter("maHK", typeof(int));
+    
+            var tenDangNhapParameter = tenDangNhap != null ?
+                new ObjectParameter("tenDangNhap", tenDangNhap) :
+                new ObjectParameter("tenDangNhap", typeof(string));
+    
+            var matKhauParameter = matKhau != null ?
+                new ObjectParameter("matKhau", matKhau) :
+                new ObjectParameter("matKhau", typeof(string));
+    
+            var avatarParameter = avatar != null ?
+                new ObjectParameter("avatar", avatar) :
+                new ObjectParameter("avatar", typeof(byte[]));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_themSinhVien", tenSVParameter, maLopParameter, ngaySinhParameter, gioiTinhParameter, diaChiParameter, emailParameter, dienThoaiParameter, maDangKyParameter, maHPParameter, maHKParameter, tenDangNhapParameter, matKhauParameter, avatarParameter);
+        }
+    
+        public virtual int sp_xoaSinhVien(Nullable<int> maSV)
+        {
+            var maSVParameter = maSV.HasValue ?
+                new ObjectParameter("maSV", maSV) :
+                new ObjectParameter("maSV", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_xoaSinhVien", maSVParameter);
+        }
+    
+        public virtual ObjectResult<sp_danhSachSinhVienThird_Result> sp_danhSachSinhVienThird()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_danhSachSinhVienThird_Result>("sp_danhSachSinhVienThird");
+        }
+    
+        public virtual ObjectResult<sp_getLop4CB_Result> sp_getLop4CB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getLop4CB_Result>("sp_getLop4CB");
+        }
     }
 }

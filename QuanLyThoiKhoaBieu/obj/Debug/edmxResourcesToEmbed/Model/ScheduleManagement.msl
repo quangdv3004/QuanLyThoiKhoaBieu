@@ -109,6 +109,7 @@
     <EntitySetMapping Name="SinhViens">
       <EntityTypeMapping TypeName="ScheduleManagement.SinhVien">
         <MappingFragment StoreEntitySet="SinhVien">
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
           <ScalarProperty Name="maSV" ColumnName="maSV" />
           <ScalarProperty Name="tenSV" ColumnName="tenSV" />
           <ScalarProperty Name="maLop" ColumnName="maLop" />
@@ -422,6 +423,61 @@
     <FunctionImportMapping FunctionImportName="sp_getNganh4CB" FunctionName="ScheduleManagement.Store.sp_getNganh4CB">
       <ResultMapping>
         <ComplexTypeMapping TypeName="ScheduleManagement.sp_getNganh4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getCTDT4CB" FunctionName="ScheduleManagement.Store.sp_getCTDT4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getCTDT4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachSinhVienSecond" FunctionName="ScheduleManagement.Store.sp_danhSachSinhVienSecond">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachSinhVienSecond_Result">
+          <ScalarProperty Name="Mã_sinh_viên" ColumnName="Mã sinh viên" />
+          <ScalarProperty Name="Ảnh_đại_diện" ColumnName="Ảnh đại diện" />
+          <ScalarProperty Name="Tên_sinh_viên" ColumnName="Tên sinh viên" />
+          <ScalarProperty Name="Tên_lớp" ColumnName="Tên lớp" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+          <ScalarProperty Name="Mã_đăng_ký" ColumnName="Mã đăng ký" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_suaSinhVien" FunctionName="ScheduleManagement.Store.sp_suaSinhVien" />
+    <FunctionImportMapping FunctionImportName="sp_themSinhVien" FunctionName="ScheduleManagement.Store.sp_themSinhVien" />
+    <FunctionImportMapping FunctionImportName="sp_xoaSinhVien" FunctionName="ScheduleManagement.Store.sp_xoaSinhVien" />
+    <FunctionImportMapping FunctionImportName="sp_danhSachSinhVienThird" FunctionName="ScheduleManagement.Store.sp_danhSachSinhVienThird">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachSinhVienThird_Result">
+          <ScalarProperty Name="Mã_sinh_viên" ColumnName="Mã sinh viên" />
+          <ScalarProperty Name="Ảnh_đại_diện" ColumnName="Ảnh đại diện" />
+          <ScalarProperty Name="Tên_sinh_viên" ColumnName="Tên sinh viên" />
+          <ScalarProperty Name="Tên_lớp" ColumnName="Tên lớp" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+          <ScalarProperty Name="Mã_đăng_ký" ColumnName="Mã đăng ký" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getLop4CB" FunctionName="ScheduleManagement.Store.sp_getLop4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getLop4CB_Result">
           <ScalarProperty Name="id" ColumnName="id" />
           <ScalarProperty Name="name" ColumnName="name" />
         </ComplexTypeMapping>

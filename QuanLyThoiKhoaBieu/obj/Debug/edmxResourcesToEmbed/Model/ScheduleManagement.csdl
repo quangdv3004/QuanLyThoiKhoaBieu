@@ -149,6 +149,7 @@
     <NavigationProperty Name="HocKy_NienKhoa" Relationship="Self.FK__SinhVien__maHK__33D4B598" FromRole="SinhVien" ToRole="HocKy_NienKhoa" />
     <NavigationProperty Name="HocPhan" Relationship="Self.FK__SinhVien__maHP__32E0915F" FromRole="SinhVien" ToRole="HocPhan" />
     <NavigationProperty Name="Lop_QL" Relationship="Self.FK__SinhVien__maLop__30F848ED" FromRole="SinhVien" ToRole="Lop_QL" />
+    <Property Name="avatar" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="ThoiKhoaBieu">
     <Key>
@@ -752,6 +753,44 @@
     <FunctionImport Name="sp_getPCGD4CB" ReturnType="Collection(ScheduleManagement.sp_getPCGD4CB_Result)" />
     <FunctionImport Name="sp_getKhoa4CB" ReturnType="Collection(ScheduleManagement.sp_getKhoa4CB_Result)" />
     <FunctionImport Name="sp_getNganh4CB" ReturnType="Collection(ScheduleManagement.sp_getNganh4CB_Result)" />
+    <FunctionImport Name="sp_getCTDT4CB" ReturnType="Collection(ScheduleManagement.sp_getCTDT4CB_Result)" />
+    <FunctionImport Name="sp_danhSachSinhVienSecond" ReturnType="Collection(ScheduleManagement.sp_danhSachSinhVienSecond_Result)" />
+    <FunctionImport Name="sp_suaSinhVien">
+      <Parameter Name="maSV" Mode="In" Type="Int32" />
+      <Parameter Name="tenSV" Mode="In" Type="String" />
+      <Parameter Name="maLop" Mode="In" Type="Int32" />
+      <Parameter Name="ngaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="gioiTinh" Mode="In" Type="Boolean" />
+      <Parameter Name="diaChi" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="dienThoai" Mode="In" Type="String" />
+      <Parameter Name="maDangKy" Mode="In" Type="Int32" />
+      <Parameter Name="maHP" Mode="In" Type="Int32" />
+      <Parameter Name="maHK" Mode="In" Type="Int32" />
+      <Parameter Name="tenDangNhap" Mode="In" Type="String" />
+      <Parameter Name="matKhau" Mode="In" Type="String" />
+      <Parameter Name="avatar" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_themSinhVien">
+      <Parameter Name="tenSV" Mode="In" Type="String" />
+      <Parameter Name="maLop" Mode="In" Type="Int32" />
+      <Parameter Name="ngaySinh" Mode="In" Type="DateTime" />
+      <Parameter Name="gioiTinh" Mode="In" Type="Boolean" />
+      <Parameter Name="diaChi" Mode="In" Type="String" />
+      <Parameter Name="email" Mode="In" Type="String" />
+      <Parameter Name="dienThoai" Mode="In" Type="String" />
+      <Parameter Name="maDangKy" Mode="In" Type="Int32" />
+      <Parameter Name="maHP" Mode="In" Type="Int32" />
+      <Parameter Name="maHK" Mode="In" Type="Int32" />
+      <Parameter Name="tenDangNhap" Mode="In" Type="String" />
+      <Parameter Name="matKhau" Mode="In" Type="String" />
+      <Parameter Name="avatar" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_xoaSinhVien">
+      <Parameter Name="maSV" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_danhSachSinhVienThird" ReturnType="Collection(ScheduleManagement.sp_danhSachSinhVienThird_Result)" />
+    <FunctionImport Name="sp_getLop4CB" ReturnType="Collection(ScheduleManagement.sp_getLop4CB_Result)" />
   </EntityContainer>
   <ComplexType Name="sp_danhSachChiTietCTDT_Result">
     <Property Type="Int32" Name="Mã_chi_tiết_CTĐT" Nullable="false" />
@@ -914,6 +953,42 @@
     <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
   </ComplexType>
   <ComplexType Name="sp_getNganh4CB_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_getCTDT4CB_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_danhSachSinhVienSecond_Result">
+    <Property Type="Int32" Name="Mã_sinh_viên" Nullable="false" />
+    <Property Type="Binary" Name="Ảnh_đại_diện" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Tên_sinh_viên" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tên_lớp" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Ngày_sinh" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="Giới_tính" Nullable="true" />
+    <Property Type="String" Name="Địa_chỉ" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Điện_thoại" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Mã_đăng_ký" Nullable="false" />
+    <Property Type="String" Name="Tên_học_phần" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Học_kỳ" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_danhSachSinhVienThird_Result">
+    <Property Type="Int32" Name="Mã_sinh_viên" Nullable="false" />
+    <Property Type="Binary" Name="Ảnh_đại_diện" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Tên_sinh_viên" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tên_lớp" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Ngày_sinh" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Giới_tính" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Địa_chỉ" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Điện_thoại" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Mã_đăng_ký" Nullable="false" />
+    <Property Type="String" Name="Tên_học_phần" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Học_kỳ" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_getLop4CB_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
   </ComplexType>
