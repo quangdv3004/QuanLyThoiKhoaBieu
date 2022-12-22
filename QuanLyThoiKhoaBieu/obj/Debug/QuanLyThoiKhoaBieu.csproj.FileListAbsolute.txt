@@ -51,3 +51,5 @@ D:\C# Project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.CTDTView.resources
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.ChiTietCTDT.resources
 E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.SinhVienView.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.PCGDView.resources
+E:\C# project\QuanLyThoiKhoaBieu\QuanLyThoiKhoaBieu\obj\Debug\QuanLyThoiKhoaBieu.UserControlsView.ThoiKhoaBieuView.resources

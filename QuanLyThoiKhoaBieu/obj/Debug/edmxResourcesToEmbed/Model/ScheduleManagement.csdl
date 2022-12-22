@@ -791,6 +791,13 @@
     </FunctionImport>
     <FunctionImport Name="sp_danhSachSinhVienThird" ReturnType="Collection(ScheduleManagement.sp_danhSachSinhVienThird_Result)" />
     <FunctionImport Name="sp_getLop4CB" ReturnType="Collection(ScheduleManagement.sp_getLop4CB_Result)" />
+    <FunctionImport Name="sp_danhSachSinhVienFouth" ReturnType="Collection(ScheduleManagement.sp_danhSachSinhVienFouth_Result)" />
+    <FunctionImport Name="sp_getDangKy4CB" ReturnType="Collection(ScheduleManagement.sp_getDangKy4CB_Result)" />
+    <FunctionImport Name="sp_getPhong4CB" ReturnType="Collection(ScheduleManagement.sp_getPhong4CB_Result)" />
+    <FunctionImport Name="sp_danhSachTKBTwo" ReturnType="Collection(ScheduleManagement.sp_danhSachTKBTwo_Result)">
+      <Parameter Name="maSV" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_danhSachTKBThree" ReturnType="Collection(ScheduleManagement.sp_danhSachTKBThree_Result)" />
   </EntityContainer>
   <ComplexType Name="sp_danhSachChiTietCTDT_Result">
     <Property Type="Int32" Name="Mã_chi_tiết_CTĐT" Nullable="false" />
@@ -991,5 +998,51 @@
   <ComplexType Name="sp_getLop4CB_Result">
     <Property Type="Int32" Name="id" Nullable="false" />
     <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_danhSachSinhVienFouth_Result">
+    <Property Type="Int32" Name="Mã_sinh_viên" Nullable="false" />
+    <Property Type="Binary" Name="Ảnh_đại_diện" Nullable="true" MaxLength="Max" />
+    <Property Type="String" Name="Tên_sinh_viên" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Tên_lớp" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="Ngày_sinh" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Giới_tính" Nullable="true" MaxLength="3" />
+    <Property Type="String" Name="Địa_chỉ" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Điện_thoại" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="Tên_đăng_nhâp" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Mật_khẩu" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="Mã_đăng_ký" Nullable="false" />
+    <Property Type="String" Name="Tên_học_phần" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Học_kỳ" Nullable="true" MaxLength="20" />
+  </ComplexType>
+  <ComplexType Name="sp_getDangKy4CB_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="Int32" Name="name" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="sp_getPhong4CB_Result">
+    <Property Type="Int32" Name="id" Nullable="false" />
+    <Property Type="String" Name="name" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="sp_danhSachTKBTwo_Result">
+    <Property Type="Int32" Name="Mã_TKB" Nullable="false" />
+    <Property Type="String" Name="Thứ" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Tiết" Nullable="true" />
+    <Property Type="String" Name="Tên_giảng_viên" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phòng" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Học_phần" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Mã_phân_công_giảng_dạy" Nullable="false" />
+    <Property Type="String" Name="Học_kì" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Lớp" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="sp_danhSachTKBThree_Result">
+    <Property Type="Int32" Name="Mã_TKB" Nullable="false" />
+    <Property Type="String" Name="Thứ" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="Tiết" Nullable="true" />
+    <Property Type="String" Name="Tên_giảng_viên" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Phòng" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Học_phần" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="Mã_phân_công_giảng_dạy" Nullable="false" />
+    <Property Type="String" Name="Học_kì" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="Lớp" Nullable="true" MaxLength="50" />
   </ComplexType>
 </Schema>

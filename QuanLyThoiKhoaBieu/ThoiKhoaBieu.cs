@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net.NetworkInformation;
@@ -39,6 +40,7 @@ namespace QuanLyThoiKhoaBieu
         }
         List<formActions> actions = new List<formActions>();
         ScheduleManagementEntities model = new ScheduleManagementEntities();
+        SinhVien sv;
 
         public ThoiKhoaBieu()
         {
@@ -47,7 +49,6 @@ namespace QuanLyThoiKhoaBieu
 
         private void tabHeThong_Click(object sender, EventArgs e)
         {
-
         }
 
         private void btnPhong_Click(object sender, EventArgs e)
@@ -103,7 +104,7 @@ namespace QuanLyThoiKhoaBieu
             }
             if(!actions.Any(u => u.name == formName &&  u.active == true))
             {
-                var view = actions.FirstOrDefault(u => u.name == formName && u.active == false);
+                var view = actions.LastOrDefault(u => u.name == formName && u.active == false);
                 if(view != null)
                 {
                     view.FormControl.Controls.Add(view.view);
@@ -119,18 +120,64 @@ namespace QuanLyThoiKhoaBieu
         private void ThoiKhoaBieu_Load(object sender, EventArgs e)
         {
             actions.Add(new formActions(tabQuanLy, new PhongView()));
-            actions.Add(new formActions(tabQuanLy, new DangKyView()) );
+            actions.Add(new formActions(tabQuanLy, new DangKyView()));
             actions.Add(new formActions(tabQuanLy, new GiangVienView()));
             actions.Add(new formActions(tabQuanLy, new KhoaView()));
             actions.Add(new formActions(tabQuanLy, new NganhView()));
 
-            actions.Add(new formActions(tabQuanLy, new HocKyView()) );
+            actions.Add(new formActions(tabQuanLy, new HocKyView()));
             actions.Add(new formActions(tabQuanLy, new LopView()));
-            actions.Add(new formActions(tabQuanLy, new HocPhanView()) );
+            actions.Add(new formActions(tabQuanLy, new HocPhanView()));
             actions.Add(new formActions(tabQuanLy, new CTDTView()));
+            actions.Add(new formActions(tabQuanLy, new PCGDView()));
             actions.Add(new formActions(tabQuanLy, new UserControlsView.ChiTietCTDT()));
+
+            sv = model.SinhViens.FirstOrDefault(u => u.maSV == Program.userLogged.maSV);
+            if (sv.maSV != 1)
+            {
+                pbAvatar1.Image = byteArratToImage(sv.avatar);
+                lbLop.Text = sv.Lop_QL.tenLop;
+                lbHoTen1.Text = sv.tenSV;
+                DateTime dt = DateTime.ParseExact(sv.ngaySinh.ToString(), "MM/dd/yyyy hh:mm:ss tt", CultureInfo.InvariantCulture);
+
+                string s = dt.ToString("dd/M/yyyy", CultureInfo.InvariantCulture);
+                lbNgaySinh.Text = s;
+            }
+
+            lbGioiTinh.Text = sv.gioiTinh == true ? "Nam" : "Nữ";
+            lbDiaChi.Text = sv.diaChi;
+            lbEmail.Text = sv.email;
+            lbDienThoai.Text = sv.dienThoai;
+            lbTenSV.Text = sv.tenSV + " !";
+
+            ShowGridView.showDataGridView(dataGridViewtkb, model.sp_danhSachTKBThree());
+            ShowGridView.showDataGridView(dataGridLop, model.sp_danhSachLopQuanLy());
+            ShowGridView.showDataGridView(dataGridKhoa, model.sp_danhSanhKhoa());
         }
-        
+
+        public byte[] imageToByteArr(Image img)
+        {
+            if (img != null)
+            {
+                ImageConverter image = new ImageConverter();
+                byte[] xbyte = (byte[])image.ConvertTo(img, typeof(byte[]));
+                return xbyte;
+            }
+            return null;
+        }
+
+        public Image byteArratToImage(byte[] Arr)
+        {
+            if (Arr != null)
+            {
+                Image bmp = (Bitmap)((new ImageConverter()).ConvertFrom(Arr));
+                return bmp;
+            }
+            return null;
+
+        }
+
+
         private void btnPhong_MouseLeave(object sender, EventArgs e)
         {
         }
@@ -196,6 +243,8 @@ namespace QuanLyThoiKhoaBieu
             actions.Add(new formActions(tabQuanLy, new HocPhanView()));
             actions.Add(new formActions(tabQuanLy, new CTDTView()));
             actions.Add(new formActions(tabQuanLy, new SinhVienView()));
+            actions.Add(new formActions(tabQuanLy, new PCGDView()));
+            actions.Add(new formActions(tabQuanLy, new ThoiKhoaBieuView()));
             actions.Add(new formActions(tabQuanLy, new UserControlsView.ChiTietCTDT()));
         }
 
@@ -203,6 +252,47 @@ namespace QuanLyThoiKhoaBieu
         {
             reloadViewControl();
             setHideAndPush("SinhVienView");
+        }
+
+        private void btnPCGD_Click(object sender, EventArgs e)
+        {
+            reloadViewControl();
+            setHideAndPush("PCGDView");
+        }
+
+        private void btnTKB_Click(object sender, EventArgs e)
+        {
+            reloadViewControl();
+            setHideAndPush("ThoiKhoaBieuView");
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Program.userLogged = null;
+            this.Hide();
+            MessageBox.Show("Bạn đã đăng xuất, vui lòng đăng nhập lại để sử dụng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form1 f = new Form1();
+            f.Show();
+        }
+
+        private void lbTenSV_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbAvatar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbLop_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

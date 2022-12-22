@@ -32,6 +32,9 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.groupBang = new System.Windows.Forms.GroupBox();
             this.dataGridThongTin = new System.Windows.Forms.DataGridView();
             this.groupThongTin = new System.Windows.Forms.GroupBox();
+            this.cbKhoa = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.txtTenNganh = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,9 +45,6 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.cbKhoa = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.groupBang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridThongTin)).BeginInit();
             this.groupThongTin.SuspendLayout();
@@ -74,6 +74,7 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.dataGridThongTin.RowTemplate.Height = 24;
             this.dataGridThongTin.Size = new System.Drawing.Size(982, 252);
             this.dataGridThongTin.TabIndex = 0;
+            this.dataGridThongTin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridThongTin_CellClick);
             this.dataGridThongTin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridThongTin_CellContentClick);
             // 
             // groupThongTin
@@ -100,6 +101,38 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.groupThongTin.TabIndex = 14;
             this.groupThongTin.TabStop = false;
             this.groupThongTin.Text = "Thông tin";
+            // 
+            // cbKhoa
+            // 
+            this.cbKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKhoa.FormattingEnabled = true;
+            this.cbKhoa.Location = new System.Drawing.Point(665, 103);
+            this.cbKhoa.Margin = new System.Windows.Forms.Padding(4);
+            this.cbKhoa.Name = "cbKhoa";
+            this.cbKhoa.Size = new System.Drawing.Size(249, 28);
+            this.cbKhoa.TabIndex = 7;
+            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbGioiTinh_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(661, 76);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 20);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Khoa";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.Start_Menu_Search_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(648, 26);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
             // 
             // txtSearch
             // 
@@ -203,38 +236,6 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // cbKhoa
-            // 
-            this.cbKhoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbKhoa.FormattingEnabled = true;
-            this.cbKhoa.Location = new System.Drawing.Point(665, 103);
-            this.cbKhoa.Margin = new System.Windows.Forms.Padding(4);
-            this.cbKhoa.Name = "cbKhoa";
-            this.cbKhoa.Size = new System.Drawing.Size(249, 28);
-            this.cbKhoa.TabIndex = 7;
-            this.cbKhoa.SelectedIndexChanged += new System.EventHandler(this.cbGioiTinh_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(661, 76);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 20);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Khoa";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.Start_Menu_Search_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(648, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
             // 
             // NganhView
             // 

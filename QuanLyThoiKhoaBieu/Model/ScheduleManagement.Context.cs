@@ -985,5 +985,34 @@ namespace QuanLyThoiKhoaBieu.Model
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getLop4CB_Result>("sp_getLop4CB");
         }
+    
+        public virtual ObjectResult<sp_danhSachSinhVienFouth_Result> sp_danhSachSinhVienFouth()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_danhSachSinhVienFouth_Result>("sp_danhSachSinhVienFouth");
+        }
+    
+        public virtual ObjectResult<sp_getDangKy4CB_Result> sp_getDangKy4CB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getDangKy4CB_Result>("sp_getDangKy4CB");
+        }
+    
+        public virtual ObjectResult<sp_getPhong4CB_Result> sp_getPhong4CB()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_getPhong4CB_Result>("sp_getPhong4CB");
+        }
+    
+        public virtual ObjectResult<sp_danhSachTKBTwo_Result> sp_danhSachTKBTwo(Nullable<int> maSV)
+        {
+            var maSVParameter = maSV.HasValue ?
+                new ObjectParameter("maSV", maSV) :
+                new ObjectParameter("maSV", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_danhSachTKBTwo_Result>("sp_danhSachTKBTwo", maSVParameter);
+        }
+    
+        public virtual ObjectResult<sp_danhSachTKBThree_Result> sp_danhSachTKBThree()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_danhSachTKBThree_Result>("sp_danhSachTKBThree");
+        }
     }
 }

@@ -9,15 +9,21 @@ namespace QuanLyThoiKhoaBieu.Services
 {
     class TextControl
     {
-        public static void emptyTxt(UserControl f)
+        public static void emptyTxt(UserControl f, bool searchRecursively = true)
         {
-            foreach (Control x in f.Controls)
+            Action<Control.ControlCollection, bool> clearTextBoxes = null;
+            clearTextBoxes = (controls, searchChildren) =>
             {
-                if (x is TextBox)
+                foreach (Control c in controls)
                 {
-                    ((TextBox)x).Text = String.Empty;
+                    TextBox txt = c as TextBox;
+                    txt?.Clear();
+                    if (searchChildren && c.HasChildren)
+                        clearTextBoxes(c.Controls, true);
                 }
-            }
+            };
+
+            clearTextBoxes(f.Controls, searchRecursively);
         }
 
     }

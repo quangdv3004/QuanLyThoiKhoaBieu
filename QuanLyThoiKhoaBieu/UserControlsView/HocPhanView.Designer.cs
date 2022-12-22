@@ -33,7 +33,9 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.dataGridThongTin = new System.Windows.Forms.DataGridView();
             this.groupThongTin = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtSoTinChi = new System.Windows.Forms.TextBox();
             this.txtTenHocPhan = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt1 = new System.Windows.Forms.TextBox();
@@ -43,8 +45,6 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtSoTinChi = new System.Windows.Forms.TextBox();
             this.groupBang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridThongTin)).BeginInit();
             this.groupThongTin.SuspendLayout();
@@ -74,6 +74,7 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.dataGridThongTin.RowTemplate.Height = 24;
             this.dataGridThongTin.Size = new System.Drawing.Size(982, 252);
             this.dataGridThongTin.TabIndex = 0;
+            this.dataGridThongTin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridThongTin_CellClick);
             this.dataGridThongTin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridThongTin_CellContentClick);
             // 
             // groupThongTin
@@ -111,6 +112,17 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.label4.TabIndex = 6;
             this.label4.Text = "Số tín chỉ";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.Start_Menu_Search_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(648, 26);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(710, 33);
@@ -119,6 +131,15 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.txtSearch.Size = new System.Drawing.Size(249, 27);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // txtSoTinChi
+            // 
+            this.txtSoTinChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoTinChi.Location = new System.Drawing.Point(665, 103);
+            this.txtSoTinChi.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSoTinChi.Name = "txtSoTinChi";
+            this.txtSoTinChi.Size = new System.Drawing.Size(249, 28);
+            this.txtSoTinChi.TabIndex = 2;
             // 
             // txtTenHocPhan
             // 
@@ -213,26 +234,6 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.Start_Menu_Search_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(648, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtSoTinChi
-            // 
-            this.txtSoTinChi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoTinChi.Location = new System.Drawing.Point(665, 103);
-            this.txtSoTinChi.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSoTinChi.Name = "txtSoTinChi";
-            this.txtSoTinChi.Size = new System.Drawing.Size(249, 28);
-            this.txtSoTinChi.TabIndex = 2;
             // 
             // HocPhanView
             // 

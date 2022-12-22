@@ -54,13 +54,21 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
 
         private void dataGridThongTin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
-            txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
-            txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
-            dtngaySinh.Text = rows.Cells[2].Value == null ? "" : rows.Cells[2].Value.ToString();
-            cbGioiTinh.Text = rows.Cells[3].Value == null ? "" : (rows.Cells[3].Value.ToString() == "True" ? "Nam" : "Nữ");
-            txt5.Text = rows.Cells[4].Value == null ? "" : rows.Cells[4].Value.ToString();
-            txt6.Text = rows.Cells[5].Value == null ? "" : rows.Cells[5].Value.ToString();
+            try
+            {
+                DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
+                txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
+                txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+                dtngaySinh.Text = rows.Cells[2].Value == null ? "" : rows.Cells[2].Value.ToString();
+                cbGioiTinh.Text = rows.Cells[3].Value == null ? "" : (rows.Cells[3].Value.ToString() == "True" ? "Nam" : "Nữ");
+                txt5.Text = rows.Cells[4].Value == null ? "" : rows.Cells[4].Value.ToString();
+                txt6.Text = rows.Cells[5].Value == null ? "" : rows.Cells[5].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Cột không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -136,7 +144,7 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
                 maGV = u.maGV,
                 tenGV = u.tenGV,
                 ngaySinh = u.ngaySinh,
-                gioiTinh = u.gioiTinh,
+                gioiTinh = u.gioiTinh == true ? "Nam" : "Nữ",
                 email = u.email,
                 dienThoai = u.dienThoai
             }).ToList<Object>();

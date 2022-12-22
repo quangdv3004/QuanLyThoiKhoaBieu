@@ -41,9 +41,17 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
 
         private void dataGrid(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
-            txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
-            txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+            try
+            {
+                DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
+                txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
+                txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Cột không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void EnableButton(bool type = true)
@@ -77,21 +85,21 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             if (status == 1)
             {
                 model.sp_themPhong(txt2.Text);
-                MessageBox.Show("Thêm phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Thêm phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 EnableButton();
             }
 
             if (status == 2)
             {
                 model.sp_suaPhong(int.Parse(txt1.Text), txt2.Text);
-                MessageBox.Show("Sửa phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Sửa phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 EnableButton();
             }
 
             if (status == 3)
             {
                 model.sp_xoaPhong(int.Parse(txt1.Text));
-                MessageBox.Show("Xóa phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Xóa phòng thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 EnableButton();
             }
             dataGridThongTin.DataSource = model.sp_danhSachPhong();

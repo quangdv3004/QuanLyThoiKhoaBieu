@@ -32,10 +32,16 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.groupBang = new System.Windows.Forms.GroupBox();
             this.dataGridThongTin = new System.Windows.Forms.DataGridView();
             this.groupThongTin = new System.Windows.Forms.GroupBox();
+            this.cbHocPhan = new System.Windows.Forms.ComboBox();
+            this.cbCTDT = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.txtSearch = new System.Windows.Forms.TextBox();
+            this.txtTenNganh = new System.Windows.Forms.TextBox();
+            this.txtTimeDT = new System.Windows.Forms.TextBox();
             this.txtSoTInChi = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txt1 = new System.Windows.Forms.TextBox();
@@ -45,12 +51,6 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtTimeDT = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbHocPhan = new System.Windows.Forms.ComboBox();
-            this.cbCTDT = new System.Windows.Forms.ComboBox();
-            this.txtTenNganh = new System.Windows.Forms.TextBox();
             this.groupBang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridThongTin)).BeginInit();
             this.groupThongTin.SuspendLayout();
@@ -80,6 +80,7 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.dataGridThongTin.RowTemplate.Height = 24;
             this.dataGridThongTin.Size = new System.Drawing.Size(981, 252);
             this.dataGridThongTin.TabIndex = 0;
+            this.dataGridThongTin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridThongTin_CellClick);
             this.dataGridThongTin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridThongTin_CellContentClick);
             // 
             // groupThongTin
@@ -113,6 +114,29 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.groupThongTin.TabStop = false;
             this.groupThongTin.Text = "Thông tin";
             // 
+            // cbHocPhan
+            // 
+            this.cbHocPhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbHocPhan.FormattingEnabled = true;
+            this.cbHocPhan.Location = new System.Drawing.Point(343, 105);
+            this.cbHocPhan.Margin = new System.Windows.Forms.Padding(4);
+            this.cbHocPhan.Name = "cbHocPhan";
+            this.cbHocPhan.Size = new System.Drawing.Size(249, 28);
+            this.cbHocPhan.TabIndex = 13;
+            this.cbHocPhan.SelectedIndexChanged += new System.EventHandler(this.cbHocPhan_SelectedIndexChanged);
+            this.cbHocPhan.SelectedValueChanged += new System.EventHandler(this.cbHocPhan_SelectedValueChanged);
+            // 
+            // cbCTDT
+            // 
+            this.cbCTDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCTDT.FormattingEnabled = true;
+            this.cbCTDT.Location = new System.Drawing.Point(12, 174);
+            this.cbCTDT.Margin = new System.Windows.Forms.Padding(4);
+            this.cbCTDT.Name = "cbCTDT";
+            this.cbCTDT.Size = new System.Drawing.Size(249, 28);
+            this.cbCTDT.TabIndex = 13;
+            this.cbCTDT.SelectedIndexChanged += new System.EventHandler(this.cbCTDT_SelectedIndexChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -133,6 +157,16 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.label5.TabIndex = 8;
             this.label5.Text = "Chương trình đào tạo";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(661, 145);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(137, 20);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Thời gian đào tạo";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -143,6 +177,17 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.label4.TabIndex = 6;
             this.label4.Text = "Số tín chỉ";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.Start_Menu_Search_icon;
+            this.pictureBox2.Location = new System.Drawing.Point(648, 26);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // txtSearch
             // 
             this.txtSearch.Location = new System.Drawing.Point(709, 33);
@@ -151,6 +196,28 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.txtSearch.Size = new System.Drawing.Size(249, 27);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            // 
+            // txtTenNganh
+            // 
+            this.txtTenNganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenNganh.Location = new System.Drawing.Point(341, 172);
+            this.txtTenNganh.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenNganh.Name = "txtTenNganh";
+            this.txtTenNganh.ReadOnly = true;
+            this.txtTenNganh.Size = new System.Drawing.Size(249, 28);
+            this.txtTenNganh.TabIndex = 2;
+            this.txtTenNganh.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // txtTimeDT
+            // 
+            this.txtTimeDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimeDT.Location = new System.Drawing.Point(665, 172);
+            this.txtTimeDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTimeDT.Name = "txtTimeDT";
+            this.txtTimeDT.ReadOnly = true;
+            this.txtTimeDT.Size = new System.Drawing.Size(249, 28);
+            this.txtTimeDT.TabIndex = 2;
+            this.txtTimeDT.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // txtSoTInChi
             // 
@@ -246,72 +313,6 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::QuanLyThoiKhoaBieu.Properties.Resources.Start_Menu_Search_icon;
-            this.pictureBox2.Location = new System.Drawing.Point(648, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 33);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 3;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtTimeDT
-            // 
-            this.txtTimeDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimeDT.Location = new System.Drawing.Point(665, 172);
-            this.txtTimeDT.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTimeDT.Name = "txtTimeDT";
-            this.txtTimeDT.ReadOnly = true;
-            this.txtTimeDT.Size = new System.Drawing.Size(249, 28);
-            this.txtTimeDT.TabIndex = 2;
-            this.txtTimeDT.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(661, 145);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(137, 20);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Thời gian đào tạo";
-            // 
-            // cbHocPhan
-            // 
-            this.cbHocPhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbHocPhan.FormattingEnabled = true;
-            this.cbHocPhan.Location = new System.Drawing.Point(343, 105);
-            this.cbHocPhan.Margin = new System.Windows.Forms.Padding(4);
-            this.cbHocPhan.Name = "cbHocPhan";
-            this.cbHocPhan.Size = new System.Drawing.Size(249, 28);
-            this.cbHocPhan.TabIndex = 13;
-            this.cbHocPhan.SelectedIndexChanged += new System.EventHandler(this.cbHocPhan_SelectedIndexChanged);
-            this.cbHocPhan.SelectedValueChanged += new System.EventHandler(this.cbHocPhan_SelectedValueChanged);
-            // 
-            // cbCTDT
-            // 
-            this.cbCTDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCTDT.FormattingEnabled = true;
-            this.cbCTDT.Location = new System.Drawing.Point(12, 174);
-            this.cbCTDT.Margin = new System.Windows.Forms.Padding(4);
-            this.cbCTDT.Name = "cbCTDT";
-            this.cbCTDT.Size = new System.Drawing.Size(249, 28);
-            this.cbCTDT.TabIndex = 13;
-            this.cbCTDT.SelectedIndexChanged += new System.EventHandler(this.cbCTDT_SelectedIndexChanged);
-            // 
-            // txtTenNganh
-            // 
-            this.txtTenNganh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenNganh.Location = new System.Drawing.Point(341, 172);
-            this.txtTenNganh.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTenNganh.Name = "txtTenNganh";
-            this.txtTenNganh.ReadOnly = true;
-            this.txtTenNganh.Size = new System.Drawing.Size(249, 28);
-            this.txtTenNganh.TabIndex = 2;
-            this.txtTenNganh.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // ChiTietCTDT
             // 

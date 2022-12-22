@@ -152,6 +152,9 @@
     <Compile Include="Model\sp_danhSachPhong_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sp_danhSachSinhVienFouth_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\sp_danhSachSinhVienSecond_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
@@ -161,6 +164,12 @@
     <Compile Include="Model\sp_danhSachSinhVien_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\sp_danhSachTKBThree_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_danhSachTKBTwo_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\sp_danhSachTKB_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
@@ -168,6 +177,9 @@
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_getCTDT4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_getDangKy4CB_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_getGiangVien4CB_Result.cs">
@@ -189,6 +201,9 @@
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_getPCGD4CB_Result.cs">
+      <DependentUpon>ScheduleManagement.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\sp_getPhong4CB_Result.cs">
       <DependentUpon>ScheduleManagement.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\sp_helpdiagramdefinition_Result.cs">
@@ -268,6 +283,12 @@
     <Compile Include="UserControlsView\NganhView.Designer.cs">
       <DependentUpon>NganhView.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlsView\PCGDView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\PCGDView.Designer.cs">
+      <DependentUpon>PCGDView.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlsView\PhongView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -279,6 +300,12 @@
     </Compile>
     <Compile Include="UserControlsView\SinhVienView.Designer.cs">
       <DependentUpon>SinhVienView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlsView\ThoiKhoaBieuView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlsView\ThoiKhoaBieuView.Designer.cs">
+      <DependentUpon>ThoiKhoaBieuView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -323,11 +350,17 @@
     <EmbeddedResource Include="UserControlsView\NganhView.resx">
       <DependentUpon>NganhView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\PCGDView.resx">
+      <DependentUpon>PCGDView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlsView\PhongView.resx">
       <DependentUpon>PhongView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlsView\SinhVienView.resx">
       <DependentUpon>SinhVienView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlsView\ThoiKhoaBieuView.resx">
+      <DependentUpon>ThoiKhoaBieuView.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\ScheduleManagement.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -129,5 +129,20 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
         {
             ShowGridView.showDataGridView(dataGridThongTin, renderGridNganh());
         }
+
+        private void dataGridThongTin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
+                txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
+                txtTenLop.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+                cbNganh.Text = rows.Cells[2].Value == null ? "" : rows.Cells[2].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Cột không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

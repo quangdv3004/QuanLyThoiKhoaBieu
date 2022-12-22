@@ -432,9 +432,14 @@
         <Function Name="sp_danhSachPCGD" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_danhSachPhong" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_danhSachSinhVien" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_danhSachSinhVienFouth" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_danhSachSinhVienSecond" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_danhSachSinhVienThird" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_danhSachTKB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="maSV" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_danhSachTKBThree" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_danhSachTKBTwo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="maSV" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_danhSanhKhoa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -443,6 +448,7 @@
           <Parameter Name="owner_id" Type="int" Mode="In" />
         </Function>
         <Function Name="sp_getCTDT4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getDangKy4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getGiangVien4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getHocKy4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getHocPhan4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
@@ -450,6 +456,7 @@
         <Function Name="sp_getLop4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getNganh4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_getPCGD4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="sp_getPhong4CB" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
           <Parameter Name="owner_id" Type="int" Mode="In" />
@@ -1571,6 +1578,13 @@
           </FunctionImport>
           <FunctionImport Name="sp_danhSachSinhVienThird" ReturnType="Collection(ScheduleManagement.sp_danhSachSinhVienThird_Result)" />
           <FunctionImport Name="sp_getLop4CB" ReturnType="Collection(ScheduleManagement.sp_getLop4CB_Result)" />
+          <FunctionImport Name="sp_danhSachSinhVienFouth" ReturnType="Collection(ScheduleManagement.sp_danhSachSinhVienFouth_Result)" />
+          <FunctionImport Name="sp_getDangKy4CB" ReturnType="Collection(ScheduleManagement.sp_getDangKy4CB_Result)" />
+          <FunctionImport Name="sp_getPhong4CB" ReturnType="Collection(ScheduleManagement.sp_getPhong4CB_Result)" />
+          <FunctionImport Name="sp_danhSachTKBTwo" ReturnType="Collection(ScheduleManagement.sp_danhSachTKBTwo_Result)">
+          <Parameter Name="maSV" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_danhSachTKBThree" ReturnType="Collection(ScheduleManagement.sp_danhSachTKBThree_Result)" />
         </EntityContainer>
         <ComplexType Name="sp_danhSachChiTietCTDT_Result">
           <Property Type="Int32" Name="Mã_chi_tiết_CTĐT" Nullable="false" />
@@ -1771,6 +1785,52 @@
         <ComplexType Name="sp_getLop4CB_Result">
           <Property Type="Int32" Name="id" Nullable="false" />
           <Property Type="String" Name="name" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_danhSachSinhVienFouth_Result">
+          <Property Type="Int32" Name="Mã_sinh_viên" Nullable="false" />
+          <Property Type="Binary" Name="Ảnh_đại_diện" Nullable="true" MaxLength="Max" />
+          <Property Type="String" Name="Tên_sinh_viên" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Tên_lớp" Nullable="true" MaxLength="50" />
+          <Property Type="DateTime" Name="Ngày_sinh" Nullable="true" Precision="23" />
+          <Property Type="String" Name="Giới_tính" Nullable="true" MaxLength="3" />
+          <Property Type="String" Name="Địa_chỉ" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Email" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Điện_thoại" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="Tên_đăng_nhâp" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Mật_khẩu" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="Mã_đăng_ký" Nullable="false" />
+          <Property Type="String" Name="Tên_học_phần" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Học_kỳ" Nullable="true" MaxLength="20" />
+        </ComplexType>
+        <ComplexType Name="sp_getDangKy4CB_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="name" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_getPhong4CB_Result">
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="String" Name="name" Nullable="true" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="sp_danhSachTKBTwo_Result">
+          <Property Type="Int32" Name="Mã_TKB" Nullable="false" />
+          <Property Type="String" Name="Thứ" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Tiết" Nullable="true" />
+          <Property Type="String" Name="Tên_giảng_viên" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phòng" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Học_phần" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Mã_phân_công_giảng_dạy" Nullable="false" />
+          <Property Type="String" Name="Học_kì" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Lớp" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_danhSachTKBThree_Result">
+          <Property Type="Int32" Name="Mã_TKB" Nullable="false" />
+          <Property Type="String" Name="Thứ" Nullable="true" MaxLength="10" />
+          <Property Type="Int32" Name="Tiết" Nullable="true" />
+          <Property Type="String" Name="Tên_giảng_viên" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="Phòng" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="Học_phần" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="Mã_phân_công_giảng_dạy" Nullable="false" />
+          <Property Type="String" Name="Học_kì" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="Lớp" Nullable="true" MaxLength="50" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2257,6 +2317,72 @@
               <ComplexTypeMapping TypeName="ScheduleManagement.sp_getLop4CB_Result">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name" ColumnName="name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_danhSachSinhVienFouth" FunctionName="ScheduleManagement.Store.sp_danhSachSinhVienFouth">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachSinhVienFouth_Result">
+                <ScalarProperty Name="Mã_sinh_viên" ColumnName="Mã sinh viên" />
+                <ScalarProperty Name="Ảnh_đại_diện" ColumnName="Ảnh đại diện" />
+                <ScalarProperty Name="Tên_sinh_viên" ColumnName="Tên sinh viên" />
+                <ScalarProperty Name="Tên_lớp" ColumnName="Tên lớp" />
+                <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+                <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+                <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+                <ScalarProperty Name="Tên_đăng_nhâp" ColumnName="Tên đăng nhâp" />
+                <ScalarProperty Name="Mật_khẩu" ColumnName="Mật khẩu" />
+                <ScalarProperty Name="Mã_đăng_ký" ColumnName="Mã đăng ký" />
+                <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+                <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getDangKy4CB" FunctionName="ScheduleManagement.Store.sp_getDangKy4CB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScheduleManagement.sp_getDangKy4CB_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_getPhong4CB" FunctionName="ScheduleManagement.Store.sp_getPhong4CB">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScheduleManagement.sp_getPhong4CB_Result">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_danhSachTKBTwo" FunctionName="ScheduleManagement.Store.sp_danhSachTKBTwo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachTKBTwo_Result">
+                <ScalarProperty Name="Mã_TKB" ColumnName="Mã TKB" />
+                <ScalarProperty Name="Thứ" ColumnName="Thứ" />
+                <ScalarProperty Name="Tiết" ColumnName="Tiết" />
+                <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+                <ScalarProperty Name="Phòng" ColumnName="Phòng" />
+                <ScalarProperty Name="Học_phần" ColumnName="Học phần" />
+                <ScalarProperty Name="Mã_phân_công_giảng_dạy" ColumnName="Mã phân công giảng dạy" />
+                <ScalarProperty Name="Học_kì" ColumnName="Học kì" />
+                <ScalarProperty Name="Lớp" ColumnName="Lớp" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_danhSachTKBThree" FunctionName="ScheduleManagement.Store.sp_danhSachTKBThree">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachTKBThree_Result">
+                <ScalarProperty Name="Mã_TKB" ColumnName="Mã TKB" />
+                <ScalarProperty Name="Thứ" ColumnName="Thứ" />
+                <ScalarProperty Name="Tiết" ColumnName="Tiết" />
+                <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+                <ScalarProperty Name="Phòng" ColumnName="Phòng" />
+                <ScalarProperty Name="Học_phần" ColumnName="Học phần" />
+                <ScalarProperty Name="Mã_phân_công_giảng_dạy" ColumnName="Mã phân công giảng dạy" />
+                <ScalarProperty Name="Học_kì" ColumnName="Học kì" />
+                <ScalarProperty Name="Lớp" ColumnName="Lớp" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

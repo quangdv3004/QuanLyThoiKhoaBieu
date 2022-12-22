@@ -37,9 +37,17 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
 
         private void dataGridThongTin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
-            txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
-            txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+            try
+            {
+                DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
+                txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
+                txt2.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Cột không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void txtSearch_TextChanged(object sender, EventArgs e)

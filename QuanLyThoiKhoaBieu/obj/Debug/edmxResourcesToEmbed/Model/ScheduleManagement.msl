@@ -483,5 +483,71 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachSinhVienFouth" FunctionName="ScheduleManagement.Store.sp_danhSachSinhVienFouth">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachSinhVienFouth_Result">
+          <ScalarProperty Name="Mã_sinh_viên" ColumnName="Mã sinh viên" />
+          <ScalarProperty Name="Ảnh_đại_diện" ColumnName="Ảnh đại diện" />
+          <ScalarProperty Name="Tên_sinh_viên" ColumnName="Tên sinh viên" />
+          <ScalarProperty Name="Tên_lớp" ColumnName="Tên lớp" />
+          <ScalarProperty Name="Ngày_sinh" ColumnName="Ngày sinh" />
+          <ScalarProperty Name="Giới_tính" ColumnName="Giới tính" />
+          <ScalarProperty Name="Địa_chỉ" ColumnName="Địa chỉ" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Điện_thoại" ColumnName="Điện thoại" />
+          <ScalarProperty Name="Tên_đăng_nhâp" ColumnName="Tên đăng nhâp" />
+          <ScalarProperty Name="Mật_khẩu" ColumnName="Mật khẩu" />
+          <ScalarProperty Name="Mã_đăng_ký" ColumnName="Mã đăng ký" />
+          <ScalarProperty Name="Tên_học_phần" ColumnName="Tên học phần" />
+          <ScalarProperty Name="Học_kỳ" ColumnName="Học kỳ" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getDangKy4CB" FunctionName="ScheduleManagement.Store.sp_getDangKy4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getDangKy4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_getPhong4CB" FunctionName="ScheduleManagement.Store.sp_getPhong4CB">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_getPhong4CB_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachTKBTwo" FunctionName="ScheduleManagement.Store.sp_danhSachTKBTwo">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachTKBTwo_Result">
+          <ScalarProperty Name="Mã_TKB" ColumnName="Mã TKB" />
+          <ScalarProperty Name="Thứ" ColumnName="Thứ" />
+          <ScalarProperty Name="Tiết" ColumnName="Tiết" />
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Phòng" ColumnName="Phòng" />
+          <ScalarProperty Name="Học_phần" ColumnName="Học phần" />
+          <ScalarProperty Name="Mã_phân_công_giảng_dạy" ColumnName="Mã phân công giảng dạy" />
+          <ScalarProperty Name="Học_kì" ColumnName="Học kì" />
+          <ScalarProperty Name="Lớp" ColumnName="Lớp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_danhSachTKBThree" FunctionName="ScheduleManagement.Store.sp_danhSachTKBThree">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="ScheduleManagement.sp_danhSachTKBThree_Result">
+          <ScalarProperty Name="Mã_TKB" ColumnName="Mã TKB" />
+          <ScalarProperty Name="Thứ" ColumnName="Thứ" />
+          <ScalarProperty Name="Tiết" ColumnName="Tiết" />
+          <ScalarProperty Name="Tên_giảng_viên" ColumnName="Tên giảng viên" />
+          <ScalarProperty Name="Phòng" ColumnName="Phòng" />
+          <ScalarProperty Name="Học_phần" ColumnName="Học phần" />
+          <ScalarProperty Name="Mã_phân_công_giảng_dạy" ColumnName="Mã phân công giảng dạy" />
+          <ScalarProperty Name="Học_kì" ColumnName="Học kì" />
+          <ScalarProperty Name="Lớp" ColumnName="Lớp" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

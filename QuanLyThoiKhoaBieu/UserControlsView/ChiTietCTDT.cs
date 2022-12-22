@@ -168,5 +168,23 @@ namespace QuanLyThoiKhoaBieu.UserControlsView
                 txtTimeDT.Text = ct.tgianDT;
             }
         }
+
+        private void dataGridThongTin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow rows = dataGridThongTin.Rows[e.RowIndex];
+                txt1.Text = rows.Cells[0].Value == null ? "" : rows.Cells[0].Value.ToString();
+                cbHocPhan.Text = rows.Cells[1].Value == null ? "" : rows.Cells[1].Value.ToString();
+                txtSoTInChi.Text = rows.Cells[2].Value == null ? "" : rows.Cells[2].Value.ToString();
+                cbCTDT.Text = rows.Cells[4].Value == null ? "" : rows.Cells[4].Value.ToString();
+                txtTenNganh.Text = rows.Cells[3].Value == null ? "" : rows.Cells[3].Value.ToString();
+                txtTimeDT.Text = rows.Cells[6].Value == null ? "" : rows.Cells[6].Value.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("Cột không có dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
